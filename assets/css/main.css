@@ -1,0 +1,338 @@
+/* Common Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff6b00;
+    --secondary-color: #ffa500;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --h1-color: #240000;
+    --h2-color: #1d0404;
+}
+
+[data-theme="dark"] {
+    --primary-color: #ff6b00;
+    --secondary-color: #ff9500;
+    --background-color: #1c1c1c;
+    --text-color: #f5f5f5;
+}
+
+/* Hide dark logo by default */
+.logo-dark {
+    display: none !important;
+}
+
+/* When dark mode is active, hide light logo and show dark logo */
+[data-theme="dark"] .logo-light {
+    display: none !important;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: inline-block !important;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.main-container {
+    margin: 0 auto;
+    /* padding: 0 150px;         */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: transparent;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0 150px;
+}
+
+#main-navbar.scrolled {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#main-navbar .navbar-brand,
+#main-navbar .nav-link {
+    color: var(--text-color) !important;
+}
+
+#main-navbar .nav-link.active {
+    color: #2b0e00 !important;
+}
+
+#main-navbar .btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+#main-navbar .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.d-lg-flex {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.btn-main {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-family: var(--font-family);
+    padding: 14px 40px;
+    border-radius: 100px;
+}
+
+/* Navbar Menu (center) */
+.navbar-nav.mx-auto {
+    display: flex;
+    gap: 2rem;
+    /* space between menu items */
+    font-weight: 500;
+    text-transform: uppercase;
+    /* optional for portfolio style */
+}
+
+.navbar-nav.mx-auto .nav-link {
+    color: var(--text-color);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.navbar-nav.mx-auto .nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* 
+ *  START OF BANNER SECTION STYLES 
+ */
+.sec-banner {
+    height: 100vh;
+    background: url(/assets/images/banner-bg.png) center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.padding-gap .container-fluid {
+    padding: 0 150px;
+}
+
+.txt-bg-overlay {
+    position: absolute;
+    font-size: 30rem;
+    font-style: italic;
+    font-family: var(--font-family);
+    color: rgba(0, 0, 0, 0.05);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 800;
+    z-index: 1;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.banner-content {
+    max-width: 900px;
+    z-index: 2;
+    color: var(--text-color);
+}
+
+.banner-image {
+    display: flex;
+    align-items: flex-end;
+    max-height: 80%;
+}
+
+.banner-image img {
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.banner-title {
+    font-size: 4.4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #240000;
+}
+
+.banner-subtitle {
+    font-size: 1.9rem;
+    margin-bottom: 30px;
+    color: #160b0b;
+}
+
+.btn-glass {
+    position: relative;
+    display: inline-block;
+    padding: 20px 52px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(100, 0, 0, 0.15);
+    border-color: rgba(53, 0, 0, 0.5);
+    color: #240000;
+}
+
+.glass-blur {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* 
+ *  END OF BANNER SECTION STYLES 
+ */
+
+/*
+ *  START OF CLIENTS SECTION STYLES 
+ */
+.sec-tech {
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sec-tech .banner-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--h2-color);
+}
+
+.sec-tech .title-color {
+    color: var(--primary-color);
+}
+
+.sec-tech .swiper {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Logo images inside swiper slides */
+.sec-tech .swiper-slide img {
+    max-height: 60px;
+    width: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sec-tech .swiper-slide img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* 
+*  END OF CLIENTS SECTION STYLES 
+*/
+
+/*
+*  START OF MARQUEE SECTION STYLES 
+*/
+.sec-marquee {
+    width: 100%;
+    background: #240000;
+    color: #fff;
+    overflow: hidden;
+    position: absolute;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    left: 0;
+    bottom: 0;
+}
+
+.marquee {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.marquee-content {
+    display: inline-flex;
+    gap: 80px;
+    animation: marqueeScroll 40s linear infinite;
+}
+
+.marquee-content span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, transform 1s ease;
+}
+
+.marquee-content span:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Animation keyframes */
+@keyframes marqueeScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-content::after {
+    content: attr(data-duplicate);
+    display: inline-flex;
+    gap: 80px;
+}
+/*
+*  END OF MARQUEE SECTION STYLES 
+*/
