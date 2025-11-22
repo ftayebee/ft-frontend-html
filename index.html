@@ -1,54 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>F.Tayebee Portfolio</title>
-    <link
-      rel="stylesheet"
-      href="/assets/plugins/bootstrap-5.3.8/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-    />
 
-    <link
-      rel="stylesheet"
-      href="/assets/plugins/fontawesome-7.1.0/css/all.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F.Tayebee Portfolio</title>
+  <link rel="stylesheet" href="/assets/plugins/bootstrap-5.3.8/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
-  <body>
-    <main class="main-container">
-      <!-- Navigation Menu Start -->
-      <nav class="navbar" id="main-navbar">
-        <div
-          class="container-fluid d-flex justify-content-between align-items-center"
-        >
-          <!-- Left: Logo -->
-          <a class="navbar-brand" href="#">
-            <img
-              src="/assets/images/FTAYEBEE-LIGHT.png"
-              alt="F.Tayebee Logo"
-              height="60"
-              class="logo-dark d-inline-block align-top"
-            />
-            <img
-              src="/assets/images/FTAYEBEE-DARK.png"
-              alt="F.Tayebee Logo"
-              height="60"
-              class="logo-light d-inline-block align-top"
-            />
+  <link rel="stylesheet" href="/assets/plugins/fontawesome-7.1.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body>
+  <main class="main-container">
+    <!-- Navigation Menu Start -->
+    <nav class="navbar" id="main-navbar">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Left: Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="/assets/images/FTAYEBEE-LIGHT.png" alt="F.Tayebee Logo" height="60"
+            class="logo-dark d-inline-block align-top" />
+          <img src="/assets/images/FTAYEBEE-DARK.png" alt="F.Tayebee Logo" height="60"
+            class="logo-light d-inline-block align-top" />
+        </a>
+
+        <!-- Center: Menu (desktop) -->
+        <ul class="navbar-nav mx-auto d-none d-lg-flex">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Contact button (desktop) -->
+        <div class="d-flex">
+          <button id="toggle-theme" class="btn btn-light border-0 p-2">
+            <span class="theme-icon">
+              <!-- Default icon: moon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-moon-fill"
+                viewBox="0 0 16 16">
+                <path d="M6 0a6 6 0 0 0 0 12c3.3 0 6-2.7 6-6S9.3 0 6 0z" />
+              </svg>
+            </span>
+          </button>
+          <a class="btn btn-outline-primary ms-3 d-none d-lg-block btn-main" href="#contact-me">
+            Contact Me
           </a>
+        </div>
 
-          <!-- Center: Menu (desktop) -->
-          <ul class="navbar-nav mx-auto d-none d-lg-flex">
+        <!-- Hamburger button (mobile) -->
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu"
+          aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Mobile Menu -->
+        <div class="collapse navbar-collapse d-lg-none" id="mobileMenu">
+          <ul class="navbar-nav text-center w-100">
             <li class="nav-item">
               <a class="nav-link active" href="#home">Home</a>
             </li>
@@ -64,615 +85,956 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
+            <li class="nav-item mt-2">
+              <a class="btn btn-outline-primary w-100" href="#contact-me">Contact Me</a>
+            </li>
           </ul>
-
-          <!-- Right: Contact button (desktop) -->
-          <div class="d-flex">
-            <button id="toggle-theme" class="btn btn-light border-0 p-2">
-              <span class="theme-icon">
-                <!-- Default icon: moon -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                  class="bi bi-moon-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M6 0a6 6 0 0 0 0 12c3.3 0 6-2.7 6-6S9.3 0 6 0z" />
-                </svg>
-              </span>
-            </button>
-            <a
-              class="btn btn-outline-primary ms-3 d-none d-lg-block btn-main"
-              href="#contact-me"
-            >
-              Contact Me
-            </a>
-          </div>
-
-          <!-- Hamburger button (mobile) -->
-          <button
-            class="navbar-toggler d-lg-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mobileMenu"
-            aria-controls="mobileMenu"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- Mobile Menu -->
-          <div class="collapse navbar-collapse d-lg-none" id="mobileMenu">
-            <ul class="navbar-nav text-center w-100">
-              <li class="nav-item">
-                <a class="nav-link active" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About Me</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#portfolio">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#services">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="btn btn-outline-primary w-100" href="#contact-me"
-                  >Contact Me</a
-                >
-              </li>
-            </ul>
-          </div>
         </div>
-      </nav>
-      <!-- Navigation Menu End -->
+      </div>
+    </nav>
+    <!-- Navigation Menu End -->
 
-      <!-- Section: Banner Start -->
-      <section class="sec-banner position-relative padding-gap">
-        <span class="txt-bg-overlay">F.TAYEBEE</span>
+    <!-- Section: Banner Start -->
+    <section class="sec-banner position-relative padding-gap">
+      <span class="txt-bg-overlay">F.TAYEBEE</span>
 
-        <div
-          class="container-fluid h-100 d-flex align-items-center justify-content-between"
-        >
-          <div class="banner-content">
-            <h1 class="banner-title">
-              Unlok the leader within. Grow Your Business with Confidence
-            </h1>
-            <p class="banner-subtitle">
-              Proven strategies, real-world tools, and expert guidance<br />to
-              take your business to next level.
-            </p>
-            <a href="#portfolio" class="btn btn-primary btn-glass mt-4"
-              >View My Work</a
-            >
-          </div>
-
-          <div class="banner-image d-none d-lg-block">
-            <img
-              src="/assets/images/MD-FAHIM-TAYEBEE-IMAGE23.png"
-              alt="F.Tayebee"
-            />
-          </div>
-
-          <div class="glass-blur"></div>
-          <!-- Services Marquee Start -->
-          <div class="sec-marquee">
-            <div class="marquee">
-              <div class="marquee-content">
-                <span
-                  ><img
-                    src="/assets/images/icons/asterisk-icon.png"
-                    width="24"
-                    height="25"
-                    alt=""
-                  />
-                  Web Development</span
-                >
-                <span
-                  ><img
-                    src="/assets/images/icons/asterisk-icon.png"
-                    width="24"
-                    height="25"
-                    alt=""
-                  />
-                  Laravel Applications</span
-                >
-                <span
-                  ><img
-                    src="/assets/images/icons/asterisk-icon.png"
-                    width="24"
-                    height="25"
-                    alt=""
-                  />
-                  Vue.js Frontend</span
-                >
-                <span
-                  ><img
-                    src="/assets/images/icons/asterisk-icon.png"
-                    width="24"
-                    height="25"
-                    alt=""
-                  />
-                  WordPress Customization</span
-                >
-                <span
-                  ><img
-                    src="/assets/images/icons/asterisk-icon.png"
-                    width="24"
-                    height="25"
-                    alt=""
-                  />
-                  API Integration</span
-                >
-                <span
-                  ><img
-                    src="/assets/images/icons/asterisk-icon.png"
-                    width="24"
-                    height="25"
-                    alt=""
-                  />
-                  UI/UX Design</span
-                >
-                <span
-                  ><img
-                    src="/assets/images/icons/asterisk-icon.png"
-                    width="24"
-                    height="25"
-                    alt=""
-                  />
-                  E-commerce Solutions</span
-                >
-                <span
-                  ><img
-                    src="/assets/images/icons/asterisk-icon.png"
-                    width="24"
-                    height="25"
-                    alt=""
-                  />
-                  Performance Optimization</span
-                >
-                <span
-                  ><img
-                    src="/assets/images/icons/asterisk-icon.png"
-                    width="24"
-                    height="25"
-                    alt=""
-                  />
-                  Maintenance & Support</span
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Services Marquee End -->
-        </div>
-      </section>
-      <!-- Section: Banner End -->
-
-      <!-- Section: Technologies Expertise Start -->
-      <section class="sec-tech position-relative padding-gap">
-        <div class="container-fluid h-100 text-center">
-          <h2 class="banner-title">
-            <span class="title-color">Technologies</span> & Expertise
-          </h2>
-          <p class="section-subtitle mb-5">
-            I build modern, scalable, and elegant web solutions using these
-            tools:
+      <div class="container-fluid h-100 d-flex align-items-center justify-content-between">
+        <div class="banner-content">
+          <h1 class="banner-title">
+            Unlok the leader within. Grow Your Business with Confidence
+          </h1>
+          <p class="banner-subtitle">
+            Proven strategies, real-world tools, and expert guidance<br />to
+            take your business to next level.
           </p>
+          <a href="#portfolio" class="btn btn-primary btn-glass mt-4">View My Work</a>
+        </div>
 
-          <div class="swiper techSwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="/assets/images/tech/html.png" alt="HTML5" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/tech/css.png" alt="CSS3" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/tech/js.png" alt="JavaScript" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/tech/jquery.png" alt="jQuery" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/tech/bootstrap.png" alt="Bootstrap" />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="/assets/images/tech/tailwind.png"
-                  alt="Tailwind CSS"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/tech/vue.png" alt="Vue.js" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/tech/php.png" alt="PHP" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/tech/laravel.png" alt="Laravel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/tech/wordpress.png" alt="WordPress" />
-              </div>
+        <div class="banner-image d-none d-lg-block">
+          <img src="/assets/images/MD-FAHIM-TAYEBEE-IMAGE23.png" alt="F.Tayebee" />
+        </div>
+
+        <div class="glass-blur"></div>
+
+        <div class="sec-marquee">
+          <div class="marquee">
+            <div class="marquee-content">
+              <span><img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="" />
+                Web Development</span>
+              <span><img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="" />
+                Laravel Applications</span>
+              <span><img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="" />
+                Vue.js Frontend</span>
+              <span><img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="" />
+                WordPress Customization</span>
+              <span><img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="" />
+                API Integration</span>
+              <span><img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="" />
+                UI/UX Design</span>
+              <span><img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="" />
+                E-commerce Solutions</span>
+              <span><img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="" />
+                Performance Optimization</span>
+              <span><img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="" />
+                Maintenance & Support</span>
             </div>
           </div>
         </div>
-      </section>
-      <!-- Section: Technologies Expertise End -->
+        <!-- Services Marquee End -->
+      </div>
+    </section>
+    <!-- Section: Banner End -->
 
-      <!-- Section: About Me Start -->
-      <section class="about-sec">
-        <div class="about-wrapper">
-          <!-- Left Image -->
-          <div class="about-image">
-            <img src="/assets/images/about-img.png" alt="About F.Tayebee" />
-          </div>
-
-          <!-- Right Content -->
-          <div class="about-content">
-            <span>About Me</span>
-
-            <h2 class="about-title">
-              Crafting Modern
-              <span class="highlight">Web Experiences</span>
-            </h2>
-
-            <p class="about-subtitle">
-              I build fast, scalable, and modern web applications using PHP,
-              Laravel, Vue.js, Tailwind CSS, Bootstrap, jQuery, and JavaScript.
-              With over 5 years of experience, I specialize in creating secure
-              APIs, dynamic dashboards, automation tools, and responsive
-              interfaces that deliver seamless user experiences. My focus is on
-              clean architecture, performance optimization, and turning complex
-              business requirements into powerful, efficient digital solutions.
-            </p>
-
-            <div class="benefit-grid">
-              <div class="benefit-item glass-box">
-                <div class="icon">
-                  <i class="fa fa-code"></i>
-                </div>
-                <h4>Backend Development</h4>
-                <p>
-                  Expert in PHP & Laravel, crafting secure APIs, advanced logic,
-                  and performance-optimized systems.
-                </p>
-              </div>
-
-              <div class="benefit-item glass-box">
-                <div class="icon">
-                  <i class="fa fa-layer-group"></i>
-                </div>
-                <h4>Frontend Engineering</h4>
-                <p>
-                  Building clean, responsive UIs using Vue.js, Tailwind CSS,
-                  Bootstrap, and modern JavaScript.
-                </p>
-              </div>
-
-              <div class="benefit-item glass-box">
-                <div class="icon">
-                  <i class="fa-brands fa-stack-overflow"></i>
-                </div>
-                <h4>Full Stack Solutions</h4>
-                <p>
-                  End-to-end development—from database design to fully
-                  interactive user interfaces.
-                </p>
-              </div>
-
-              <div class="benefit-item glass-box">
-                <div class="icon">
-                  <i class="fa-solid fa-gauge"></i>
-                </div>
-                <h4>Performance & Optimization</h4>
-                <p>
-                  Delivering high-speed, SEO-friendly, scalable applications
-                  with clean code and best practices.
-                </p>
-              </div>
-            </div>
-
-            <a href="#portfolio" class="btn btn-glass">View My Work</a>
-          </div>
-        </div>
-      </section>
-      <!-- Section: About Me End -->
-
-      <!-- Section: Services Start -->
-      <section
-        class="services-section container-fluid padding-gap"
-        id="services"
-      >
-        <span class="section-tag text-center d-block"
-          ><img
-            src="/assets/images/icons/asterisk-icon.png"
-            width="24"
-            height="25"
-            alt=""
-          />
-          Services</span
-        >
-
-        <h2 class="section-title text-center">
-          Services <span class="highlight">Offered</span>
+    <!-- Section: Technologies Expertise Start -->
+    <section class="sec-tech position-relative padding-gap">
+      <div class="container-fluid h-100 text-center">
+        <h2 class="banner-title">
+          <span class="title-color">Technologies</span> & Expertise
         </h2>
-
-        <p class="section-subtitle m-auto text-center">
-          High-quality development services tailored to bring your digital ideas
-          to life through modern, scalable, and user-centered solutions.
+        <p class="section-subtitle mb-5">
+          I build modern, scalable, and elegant web solutions using these
+          tools:
         </p>
 
-        <div class="services-grid mt-5">
-          <!-- Service 1 -->
-          <div class="service-card d-flex flex-column justify-content-between">
-            <div
-              class="service-header d-flex justify-content-between align-items-center"
-            >
-              <div class="service-icon">
-                <i class="ri-code-s-slash-line"></i>
-              </div>
-              <div class="btn-container">
-                <a href="/link" class="btn btn-sm btn-service-detail">
-                  Learn More
-                  <span class="btn-service-icon">
-                    <i class="ri-arrow-right-line"></i>
-                  </span>
-                </a>
-              </div>
+        <div class="swiper techSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/html.png" alt="HTML5" />
             </div>
-            <div class="service-content">
-              <h4 class="mt-3 text-left">Full Stack Development</h4>
-              <p class="text-left">
-                End-to-end development using Laravel, Vue.js, JS, and modern
-                tools to build complete web applications.
-              </p>
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/css.png" alt="CSS3" />
             </div>
-          </div>
-
-          <!-- Service 2 -->
-          <div class="service-card d-flex flex-column justify-content-between">
-            <div
-              class="service-header d-flex justify-content-between align-items-center"
-            >
-              <div class="service-icon">
-                <i class="ri-database-2-line"></i>
-              </div>
-              <div class="btn-container">
-                <a href="/link" class="btn btn-sm btn-service-detail">
-                  Learn More
-                  <span class="btn-service-icon">
-                    <i class="ri-arrow-right-line"></i>
-                  </span>
-                </a>
-              </div>
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/js.png" alt="JavaScript" />
             </div>
-            <div class="service-content">
-              <h4 class="mt-3">API & Backend Development</h4>
-              <p>
-                Secure, scalable REST APIs, database architecture,
-                authentication, and backend logic using Laravel & PHP.
-              </p>
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/jquery.png" alt="jQuery" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/bootstrap.png" alt="Bootstrap" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/tailwind.png" alt="Tailwind CSS" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/vue.png" alt="Vue.js" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/php.png" alt="PHP" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/laravel.png" alt="Laravel" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/images/tech/wordpress.png" alt="WordPress" />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Technologies Expertise End -->
 
-          <!-- Service 3 -->
-          <div class="service-card d-flex flex-column justify-content-between">
-            <div
-              class="service-header d-flex justify-content-between align-items-center"
-            >
-              <div class="service-icon">
-                <i class="ri-layout-4-line"></i>
+    <!-- Section: About Me Start -->
+    <section class="about-sec">
+      <div class="about-wrapper">
+        <!-- Left Image -->
+        <div class="about-image">
+          <img src="/assets/images/about-img.png" alt="About F.Tayebee" />
+        </div>
+
+        <!-- Right Content -->
+        <div class="about-content">
+          <span>About Me</span>
+
+          <h2 class="about-title">
+            Crafting Modern
+            <span class="highlight">Web Experiences</span>
+          </h2>
+
+          <p class="about-subtitle">
+            I build fast, scalable, and modern web applications using PHP,
+            Laravel, Vue.js, Tailwind CSS, Bootstrap, jQuery, and JavaScript.
+            With over 5 years of experience, I specialize in creating secure
+            APIs, dynamic dashboards, automation tools, and responsive
+            interfaces that deliver seamless user experiences. My focus is on
+            clean architecture, performance optimization, and turning complex
+            business requirements into powerful, efficient digital solutions.
+          </p>
+
+          <div class="benefit-grid">
+            <div class="benefit-item glass-box">
+              <div class="icon">
+                <i class="fa fa-code"></i>
               </div>
-              <div class="btn-container">
-                <a href="/link" class="btn btn-sm btn-service-detail">
-                  Learn More
-                  <span class="btn-service-icon">
-                    <i class="ri-arrow-right-line"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="service-content">
-              <h4 class="mt-3">Frontend Engineering</h4>
+              <h4>Backend Development</h4>
               <p>
-                Beautiful, fast, responsive UI using Vue.js, Tailwind CSS,
+                Expert in PHP & Laravel, crafting secure APIs, advanced logic,
+                and performance-optimized systems.
+              </p>
+            </div>
+
+            <div class="benefit-item glass-box">
+              <div class="icon">
+                <i class="fa fa-layer-group"></i>
+              </div>
+              <h4>Frontend Engineering</h4>
+              <p>
+                Building clean, responsive UIs using Vue.js, Tailwind CSS,
                 Bootstrap, and modern JavaScript.
               </p>
             </div>
-          </div>
 
-          <!-- Service 4 -->
-          <div class="service-card d-flex flex-column justify-content-between">
-            <div
-              class="service-header d-flex justify-content-between align-items-center"
-            >
-              <div class="service-icon">
-                <i class="ri-speed-up-line"></i>
+            <div class="benefit-item glass-box">
+              <div class="icon">
+                <i class="fa-brands fa-stack-overflow"></i>
               </div>
-              <div class="btn-container">
-                <a href="/link" class="btn btn-sm btn-service-detail">
-                  Learn More
-                  <span class="btn-service-icon">
-                    <i class="ri-arrow-right-line"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="service-content">
-              <h4 class="mt-3">Performance Optimization</h4>
+              <h4>Full Stack Solutions</h4>
               <p>
-                Speed, SEO optimization, caching, and code improvements for a
-                smoother and faster user experience.
+                End-to-end development—from database design to fully
+                interactive user interfaces.
+              </p>
+            </div>
+
+            <div class="benefit-item glass-box">
+              <div class="icon">
+                <i class="fa-solid fa-gauge"></i>
+              </div>
+              <h4>Performance & Optimization</h4>
+              <p>
+                Delivering high-speed, SEO-friendly, scalable applications
+                with clean code and best practices.
               </p>
             </div>
           </div>
 
-          <!-- Service 5 -->
-          <div class="service-card d-flex flex-column justify-content-between">
-            <div
-              class="service-header d-flex justify-content-between align-items-center"
-            >
-              <div class="service-icon">
-                <i class="ri-tools-line"></i>
-              </div>
-              <div class="btn-container">
-                <a href="/link" class="btn btn-sm btn-service-detail">
-                  Learn More
-                  <span class="btn-service-icon">
-                    <i class="ri-arrow-right-line"></i>
-                  </span>
-                </a>
-              </div>
+          <a href="#portfolio" class="btn btn-glass">View My Work</a>
+        </div>
+      </div>
+    </section>
+    <!-- Section: About Me End -->
+
+    <!-- Section: Services Start -->
+    <section class="services-section container-fluid padding-gap" id="services">
+      <span class="section-tag text-center d-block"><img src="/assets/images/icons/asterisk-icon.png" width="24"
+          height="25" alt="" />
+        Services</span>
+
+      <h2 class="section-title text-center">
+        Services <span class="highlight">Offered</span>
+      </h2>
+
+      <p class="section-subtitle m-auto text-center">
+        High-quality development services tailored to bring your digital ideas
+        to life through modern, scalable, and user-centered solutions.
+      </p>
+
+      <div class="services-grid mt-5">
+        <!-- Service 1 -->
+        <div class="service-card d-flex flex-column justify-content-between">
+          <div class="service-header d-flex justify-content-between align-items-center">
+            <div class="service-icon">
+              <i class="ri-code-s-slash-line"></i>
             </div>
-            <div class="service-content">
-              <h4 class="mt-3">System Maintenance & Support</h4>
-              <p>
-                Bug fixes, updates, feature enhancements, and long-term
-                technical support for your applications.
-              </p>
+            <div class="btn-container">
+              <a href="/link" class="btn btn-sm btn-service-detail">
+                Learn More
+                <span class="btn-service-icon">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
             </div>
           </div>
-
-          <!-- Service 6 -->
-          <div class="service-card d-flex flex-column justify-content-between">
-            <div
-              class="service-header d-flex justify-content-between align-items-center"
-            >
-              <div class="service-icon">
-                <i class="ri-shopping-cart-2-line"></i>
-              </div>
-              <div class="btn-container">
-                <a href="/link" class="btn btn-sm btn-service-detail">
-                  Learn More
-                  <span class="btn-service-icon">
-                    <i class="ri-arrow-right-line"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="service-content">
-              <h4 class="mt-3">E-commerce Development</h4>
-              <p>
-                High-quality Laravel/Vue.js powered e-commerce systems with
-                secure payments and product management features.
-              </p>
-            </div>
+          <div class="service-content">
+            <h4 class="mt-3 text-left">Full Stack Development</h4>
+            <p class="text-left">
+              End-to-end development using Laravel, Vue.js, JS, and modern
+              tools to build complete web applications.
+            </p>
           </div>
         </div>
-      </section>
-      <!-- Section: Services End -->
 
-      <!-- Section: Pricing Start -->
-      <section class="pricing-section container-fluid padding-gap">
-        <div
-          class="section-header d-flex flex-row align-items-center justify-content-between mb-5"
-        >
-          <div>
-            <span class="section-tag d-block">
-              <img
-                src="/assets/images/icons/asterisk-icon.png"
-                width="24"
-                height="25"
-                alt="asterisk icon"
-              />
-              Pricing
+        <!-- Service 2 -->
+        <div class="service-card d-flex flex-column justify-content-between">
+          <div class="service-header d-flex justify-content-between align-items-center">
+            <div class="service-icon">
+              <i class="ri-database-2-line"></i>
+            </div>
+            <div class="btn-container">
+              <a href="/link" class="btn btn-sm btn-service-detail">
+                Learn More
+                <span class="btn-service-icon">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="service-content">
+            <h4 class="mt-3">API & Backend Development</h4>
+            <p>
+              Secure, scalable REST APIs, database architecture,
+              authentication, and backend logic using Laravel & PHP.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card d-flex flex-column justify-content-between">
+          <div class="service-header d-flex justify-content-between align-items-center">
+            <div class="service-icon">
+              <i class="ri-layout-4-line"></i>
+            </div>
+            <div class="btn-container">
+              <a href="/link" class="btn btn-sm btn-service-detail">
+                Learn More
+                <span class="btn-service-icon">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="service-content">
+            <h4 class="mt-3">Frontend Engineering</h4>
+            <p>
+              Beautiful, fast, responsive UI using Vue.js, Tailwind CSS,
+              Bootstrap, and modern JavaScript.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card d-flex flex-column justify-content-between">
+          <div class="service-header d-flex justify-content-between align-items-center">
+            <div class="service-icon">
+              <i class="ri-speed-up-line"></i>
+            </div>
+            <div class="btn-container">
+              <a href="/link" class="btn btn-sm btn-service-detail">
+                Learn More
+                <span class="btn-service-icon">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="service-content">
+            <h4 class="mt-3">Performance Optimization</h4>
+            <p>
+              Speed, SEO optimization, caching, and code improvements for a
+              smoother and faster user experience.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card d-flex flex-column justify-content-between">
+          <div class="service-header d-flex justify-content-between align-items-center">
+            <div class="service-icon">
+              <i class="ri-tools-line"></i>
+            </div>
+            <div class="btn-container">
+              <a href="/link" class="btn btn-sm btn-service-detail">
+                Learn More
+                <span class="btn-service-icon">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="service-content">
+            <h4 class="mt-3">System Maintenance & Support</h4>
+            <p>
+              Bug fixes, updates, feature enhancements, and long-term
+              technical support for your applications.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card d-flex flex-column justify-content-between">
+          <div class="service-header d-flex justify-content-between align-items-center">
+            <div class="service-icon">
+              <i class="ri-shopping-cart-2-line"></i>
+            </div>
+            <div class="btn-container">
+              <a href="/link" class="btn btn-sm btn-service-detail">
+                Learn More
+                <span class="btn-service-icon">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="service-content">
+            <h4 class="mt-3">E-commerce Development</h4>
+            <p>
+              High-quality Laravel/Vue.js powered e-commerce systems with
+              secure payments and product management features.
+            </p>
+          </div>
+        </div>
+        <!-- Service 7 -->
+        <div class="service-card d-flex flex-column justify-content-between">
+          <div class="service-header d-flex justify-content-between align-items-center">
+            <div class="service-icon">
+              <i class="ri-wordpress-line"></i>
+            </div>
+            <div class="btn-container">
+              <a href="/link" class="btn btn-sm btn-service-detail">
+                Learn More
+                <span class="btn-service-icon">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="service-content">
+            <h4 class="mt-3">WordPress Development</h4>
+            <p>
+              Custom WordPress websites, themes, plugins, and CMS solutions
+              optimized for performance and SEO.
+            </p>
+          </div>
+        </div>
+        <!-- Service 8 -->
+        <div class="service-card d-flex flex-column justify-content-between">
+          <div class="service-header d-flex justify-content-between align-items-center">
+            <div class="service-icon">
+              <i class="ri-store-2-line"></i>
+            </div>
+            <div class="btn-container">
+              <a href="/link" class="btn btn-sm btn-service-detail">
+                Learn More
+                <span class="btn-service-icon">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="service-content">
+            <h4 class="mt-3">WooCommerce Development</h4>
+            <p>
+              Fully customized WooCommerce stores with product management,
+              secure checkout, integrations, and high-speed optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Services End -->
+
+    <!-- Section: Pricing Start -->
+    <section class="pricing-section container-fluid padding-gap">
+      <div class="section-header d-flex flex-row align-items-center justify-content-between mb-5">
+        <div>
+          <span class="section-tag d-block">
+            <img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="asterisk icon" />
+            Pricing
+          </span>
+
+          <h2 class="section-title text-left">
+            Choose a <span class="highlight">Plan</span> That Fits Your Needs
+          </h2>
+        </div>
+
+        <p class="section-subtitle text-left">
+          Flexible pricing plans tailored for developers, startups, and
+          businesses looking for powerful, scalable solutions.
+        </p>
+      </div>
+
+      <div class="section-content pricing-grid">
+        <!-- Basic Plan -->
+        <div class="pricing-card">
+          <div class="pricing-badge">Basic</div>
+
+          <h3 class="pricing-amount">$19 <span>/mo</span></h3>
+
+          <ul class="pricing-features">
+            <li><i class="ri-check-line"></i> Basic Website Support</li>
+            <li><i class="ri-check-line"></i> UI/UX Fixes (HTML/CSS/JS)</li>
+            <li><i class="ri-check-line"></i> Plugin / Package Updates</li>
+            <li><i class="ri-check-line"></i> Monthly Performance Check</li>
+            <li class="off"><i class="ri-close-line"></i> API Development</li>
+            <li class="off">
+              <i class="ri-close-line"></i> Custom Backend Logic
+            </li>
+          </ul>
+
+          <button class="pricing-btn">Get Started</button>
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="pricing-card">
+          <div class="pricing-badge">Standard</div>
+
+          <h3 class="pricing-amount">$39 <span>/mo</span></h3>
+
+          <ul class="pricing-features">
+            <li><i class="ri-check-line"></i> Frontend Development</li>
+            <li><i class="ri-check-line"></i> Vue.js Components</li>
+            <li><i class="ri-check-line"></i> Responsive UI Fixes</li>
+            <li><i class="ri-check-line"></i> Landing Pages + UI Sections</li>
+            <li><i class="ri-check-line"></i> Optimization & Speed Boost</li>
+            <li class="off">
+              <i class="ri-close-line"></i> API Integrations
+            </li>
+          </ul>
+
+          <button class="pricing-btn">Choose Standard</button>
+        </div>
+
+        <!-- Professional Plan -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Professional</div>
+
+          <h3 class="pricing-amount">$79 <span>/mo</span></h3>
+
+          <ul class="pricing-features">
+            <li><i class="ri-check-line"></i> Full Stack Development</li>
+            <li><i class="ri-check-line"></i> REST API Development</li>
+            <li><i class="ri-check-line"></i> Database + Backend Logic</li>
+            <li><i class="ri-check-line"></i> Vue.js SPA Features</li>
+            <li>
+              <i class="ri-check-line"></i> Ecommerce (Laravel/WooCommerce)
+            </li>
+            <li>
+              <i class="ri-check-line"></i> Monthly Performance Optimization
+            </li>
+          </ul>
+
+          <button class="pricing-btn active">Choose Pro</button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card">
+          <div class="pricing-badge">Enterprise</div>
+
+          <h3 class="pricing-amount">$149 <span>/mo</span></h3>
+
+          <ul class="pricing-features">
+            <li><i class="ri-check-line"></i> Full System Architecture</li>
+            <li>
+              <i class="ri-check-line"></i> Advanced API + Microservices
+            </li>
+            <li><i class="ri-check-line"></i> WordPress + Custom Plugins</li>
+            <li>
+              <i class="ri-check-line"></i> Large-Scale Ecommerce Solutions
+            </li>
+            <li><i class="ri-check-line"></i> Multi-role Admin Panels</li>
+            <li><i class="ri-check-line"></i> 24/7 Dedicated Support</li>
+          </ul>
+
+          <button class="pricing-btn">Contact Sales</button>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Pricing End -->
+
+    <!-- Section: Why Choose Us Start-->
+    <section class="whyus-section container-fluid padding-gap">
+      <div class="row align-items-center">
+        <div class="col-5">
+          <div class="whyus-image">
+            <img src="/assets/images/MD-FAHIM-TAYEBEE-IMAGE21.png" alt="Why Choose F.Tayebee" />
+          </div>
+        </div>
+
+        <div class="col-7">
+          <div class="whyus-content">
+            <span class="section-tag d-block mb-2">
+              <img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="asterisk icon" />
+              Why Choose Me
             </span>
 
-            <h2 class="section-title text-left">
-              Choose a <span class="highlight">Plan</span> That Fits Your Needs
+            <h2 class="section-title">
+              Why <span class="highlight">Choose Me</span> for Your Projects
             </h2>
-          </div>
 
-          <p class="section-subtitle text-left">
-            Flexible pricing plans tailored for developers, startups, and
-            businesses looking for powerful, scalable solutions.
-          </p>
+            <p class="section-subtitle mb-4">
+              I bring a unique blend of technical expertise, creativity, and a
+              client-focused approach to every project. Here's why I'm the
+              right choice for your web development needs:
+            </p>
+
+            <div class="whyus-benifits">
+              <div class="benifit-item">
+                <div class="icon-box">
+                  <i class="ri-star-line"></i>
+                </div>
+                <h4>Proven Expertise</h4>
+                <p>
+                  5+ years of experience building scalable web applications
+                  using Laravel, Vue.js, and modern technologies.
+                </p>
+              </div>
+
+              <div class="benifit-item">
+                <div class="icon-box">
+                  <i class="ri-user-star-line"></i>
+                </div>
+                <h4>Client-Centric</h4>
+                <p>
+                  I prioritize your goals and vision, ensuring solutions align
+                  perfectly with your business needs.
+                </p>
+              </div>
+
+              <div class="benifit-item">
+                <div class="icon-box">
+                  <i class="ri-focus-2-line"></i>
+                </div>
+                <h4>Quality Focused</h4>
+                <p>
+                  Commitment to clean code, performance optimization, and best
+                  practices for reliable, maintainable solutions.
+                </p>
+              </div>
+
+              <div class="benifit-item">
+                <div class="icon-box">
+                  <i class="ri-flow-chart"></i>
+                </div>
+                <h4>Transparent Process</h4>
+                <p>
+                  Clear communication, regular updates, and collaborative
+                  development every step of the way.
+                </p>
+              </div>
+            </div>
+
+            <div class="btn-container">
+              <a href="/link" class="btn btn-sm btn-cta">
+                Hire Me Now
+                <span class="icon-box">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+    <!-- Section: Why Choose Us End-->
 
-        <div class="section-content pricing-grid">
-          <!-- Pricing Card -->
-          <div class="pricing-card">
-            <div class="pricing-badge">Starter</div>
-
-            <h3 class="pricing-amount">$19 <span>/mo</span></h3>
-
-            <ul class="pricing-features">
-              <li><i class="ri-check-line"></i> Basic Web Support</li>
-              <li><i class="ri-check-line"></i> Email Integration</li>
-              <li><i class="ri-check-line"></i> Monthly Maintenance</li>
-              <li class="off"><i class="ri-close-line"></i> API Development</li>
-            </ul>
-
-            <button class="pricing-btn">Get Started</button>
-          </div>
-
-          <!-- Pro Card -->
-          <div class="pricing-card featured">
-            <div class="pricing-badge">Pro</div>
-
-            <h3 class="pricing-amount">$49 <span>/mo</span></h3>
-
-            <ul class="pricing-features">
-              <li><i class="ri-check-line"></i> Full Stack Development</li>
-              <li><i class="ri-check-line"></i> REST APIs & Integrations</li>
-              <li><i class="ri-check-line"></i> Priority Support</li>
-              <li><i class="ri-check-line"></i> Performance Optimization</li>
-            </ul>
-
-            <button class="pricing-btn active">Choose Pro</button>
-          </div>
-
-          <!-- Enterprise Card -->
-          <div class="pricing-card">
-            <div class="pricing-badge">Enterprise</div>
-
-            <h3 class="pricing-amount">$99 <span>/mo</span></h3>
-
-            <ul class="pricing-features">
-              <li><i class="ri-check-line"></i> Full System Architecture</li>
-              <li><i class="ri-check-line"></i> Custom API + Dashboard</li>
-              <li><i class="ri-check-line"></i> Scalability & Load Handling</li>
-              <li><i class="ri-check-line"></i> 24/7 Support</li>
-            </ul>
-
-            <button class="pricing-btn">Contact Sales</button>
-          </div>
-        </div>
-      </section>
-      <!-- Section: Pricing End -->
-
-      
-
-      <!-- Footer Widget Start -->
-      <section class="sec-footer-widget padding-gap">
-        <div class="container-fluid text-center">
-          <h2 class="banner-title mb-4">
-            Ready to <span class="title-color">Elevate</span> Your Business?
+    <!-- Development Process Section Start -->
+    <section class="dev-process-section">
+      <div class="dev-container">
+        <div class="dev-left">
+          <h2 class="dev-title">
+            My <span>Development Process</span>, Simplified
           </h2>
-          <p class="section-subtitle mb-4">
-            Let's collaborate to bring your vision to life. Contact me today to
-            discuss your project and discover how I can help you achieve your
-            goals.
-          </p>
-          <a href="#contact-me" class="btn btn-primary btn-glass btn-lg"
-            >Get in Touch</a
-          >
-        </div>
-      </section>
-      <!-- Footer Widget End -->
-    </main>
 
-    <script src="/assets/plugins/jquery-3.7.1.min.js"></script>
-    <script src="/assets/plugins/bootstrap-5.3.8/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="assets/plugins/fontawesome-7.1.0/js/all.min.js"></script>
-    <script src="/assets/js/main.js"></script>
-  </body>
+          <div class="dev-step active" data-image="/assets/images/discovery.png">
+            <div>
+              <h3>Understand Requirements</h3>
+              <p>
+                Understanding your goals, project scope, features and the
+                exact outcome you want.
+              </p>
+            </div>
+            <div class="arrow"><i class="ri-arrow-right-line"></i></div>
+          </div>
+
+          <div class="dev-step" data-image="/assets/images/planning.png">
+            <div>
+              <h3>Plan & Architect</h3>
+              <p>
+                Crafting the system design, database structure, API flow and
+                complete development roadmap.
+              </p>
+            </div>
+            <div class="arrow"><i class="ri-arrow-right-line"></i></div>
+          </div>
+
+          <div class="dev-step" data-image="/assets/images/development.png">
+            <div>
+              <h3>Develop</h3>
+              <p>
+                Building clean, scalable & secure backend (Laravel) + smooth
+                and fast frontend (Vue.js).
+              </p>
+            </div>
+            <div class="arrow"><i class="ri-arrow-right-line"></i></div>
+          </div>
+
+          <div class="dev-step" data-image="/assets/images/launch.png">
+            <div>
+              <h3>Launch & Support</h3>
+              <p>
+                Deploying the project, optimizing performance, and providing
+                continuous improvements.
+              </p>
+            </div>
+            <div class="arrow"><i class="ri-arrow-right-line"></i></div>
+          </div>
+        </div>
+
+        <div class="dev-right">
+          <div class="dev-image-wrapper">
+            <img src="/assets/images/discovery.png" alt="Development Step Image" id="dev-main-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Development Process Section End -->
+
+    <!-- Section: Industries Served Start -->
+    <section class="industries-section container-fluid padding-gap">
+      <h2 class="section-title mb-4 text-center">
+        Industries <span class="highlight">Served</span>
+      </h2>
+
+      <div class="industries-marquee">
+        <div class="marquee">
+          <div class="marquee-content">
+            <!-- Industry Item -->
+            <div class="industry-item">
+              <div class="icon-box">
+                <i class="ri-shopping-bag-line"></i>
+              </div>
+              <span>E-Commerce</span>
+            </div>
+
+            <div class="industry-item">
+              <div class="icon-box">
+                <i class="ri-cloud-line"></i>
+              </div>
+              <span>SaaS Platforms</span>
+            </div>
+
+            <div class="industry-item">
+              <div class="icon-box">
+                <i class="ri-heart-pulse-line"></i>
+              </div>
+              <span>Healthcare</span>
+            </div>
+
+            <div class="industry-item">
+              <div class="icon-box">
+                <i class="ri-money-dollar-circle-line"></i>
+              </div>
+              <span>Finance & FinTech</span>
+            </div>
+
+            <div class="industry-item">
+              <div class="icon-box">
+                <i class="ri-book-line"></i>
+              </div>
+              <span>Education</span>
+            </div>
+
+            <div class="industry-item">
+              <div class="icon-box">
+                <i class="ri-building-2-line"></i>
+              </div>
+              <span>Real Estate</span>
+            </div>
+
+            <div class="industry-item">
+              <div class="icon-box">
+                <i class="ri-truck-line"></i>
+              </div>
+              <span>Logistics</span>
+            </div>
+
+            <div class="industry-item">
+              <div class="icon-box">
+                <i class="ri-megaphone-line"></i>
+              </div>
+              <span>Digital Marketing Agencies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Industries Served End -->
+
+    <!-- Section: Testimonials Start -->
+    <section class="testimonial-section container-fluid padding-gap">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-2">What Our Clients Say</h2>
+        <p class="text-gray-600 text-lg">
+          Hear from our happy customers and partners
+        </p>
+      </div>
+
+      <!-- Swiper -->
+      <div class="relative mx-auto">
+        <div class="swiper testimonial-swiper">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide testimonial-item">
+              <div class="m-0">
+                <div class="mb-2 quotation">
+                  <img src="/assets/images/quotation.svg" alt="Quotation Mark">
+                </div>
+                <p class="text-gray-700 mb-4">
+                  This is an amazing service! Highly professional and
+                  delivered above expectations.
+                </p>
+              </div>
+              <div class="author flex items-center mt-4">
+                <img src="/assets/images/avatar-1.jpg" alt="John Doe" class="w-12 h-12 rounded-full mr-4" />
+                <div class="author-info">
+                  <h6 class="font-semibold text-gray-800">John Doe</h6>
+                  <p class="text-gray-500 text-sm">CEO, Company Inc.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide testimonial-item">
+              <div class="m-0">
+                <div class="mb-2 quotation">
+                  <img src="/assets/images/quotation.svg" alt="Quotation Mark">
+                </div>
+                <p class="text-gray-700 mb-4">
+                  Exceptional experience, the team is skilled and responsive!
+                </p>
+              </div>
+              <div class="author flex items-center mt-4">
+                <img src="/assets/images/avatar-2.jpg" alt="Jane Smith" class="w-12 h-12 rounded-full mr-4" />
+                <div class="author-info">
+                  <h6 class="font-semibold text-gray-800">Jane Smith</h6>
+                  <p class="text-gray-500 text-sm">Marketing Head, BrandCo</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide testimonial-item">
+              <div class="m-0">
+                <div class="mb-2 quotation">
+                  <img src="/assets/images/quotation.svg" alt="Quotation Mark">
+                </div>
+                <p class="text-gray-700 mb-4">
+                  Truly outstanding support and quality work. Highly recommended!
+                </p>
+              </div>
+              <div class="author flex items-center mt-4">
+                <img src="/assets/images/avatar-3.jpg" alt="Jane Smith" class="w-12 h-12 rounded-full mr-4" />
+                <div class="author-info">
+                  <h6 class="font-semibold text-gray-800">Alice Johnson</h6>
+                  <p class="text-gray-500 text-sm">CTO, TechWorld</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div
+              class="swiper-button-prev bg-white w-12 h-12 rounded-full flex items-center justify-center text-xl text-gray-800">
+            </div>
+            <div
+              class="swiper-button-next bg-white w-12 h-12 rounded-full flex items-center justify-center text-xl text-gray-800">
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Section: Testimonials End -->
+
+    <!-- Section: Call To Action Start -->
+    <section class="cta-section padding-gap container-fluid">
+      <div class="row cta-content align-items-center">
+        <div class="col-7">
+          <h2 class="cta-title mb-4">
+            Ready to <span class="highlight">Transform</span><br> Your Web Presence?
+          </h2>
+          <p class="cta-subtitle mb-4">
+            Let's work together to build modern, scalable, and high-performance web solutions that drive your business
+            forward.
+            Whether you need a sleek eCommerce platform, a powerful SaaS application, or a responsive corporate website,
+            I deliver solutions that are secure, fast, and tailored to your goals.
+          </p>
+
+          <a href="#contact-me" class="btn btn-primary btn-glass btn-lg">
+            Contact Me Today
+            <div class="icon-box">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </a>
+        </div>
+        <div class="col-5">
+          <div class="cta-image">
+            <img src="/assets/images/MD-FAHIM-TAYEBEE-IMAGE23.png" alt="Contact F.Tayebee" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Call To Action End -->
+
+    <!-- Footer Widgets Start -->
+    <section class="newsletter-widget container-fluid padding-gap">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
+            <img src="/assets/images/FTAYEBEE-DARK.png" alt="F.Tayebee Logo" height="60"
+              class="logo-light d-inline-block align-top" />
+          </div>
+
+          <!-- Newsletter Field -->
+          <div class="col-12 col-md-4">
+            <form class="newsletter-form">
+              <div class="input-group rounded-pill newsletter-group">
+                <input type="email" class="form-control newsletter-input"
+                  placeholder="Enter your email to get updates..." required>
+                <button class="btn newsletter-btn rounded-pill" type="submit">
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="footer-widget container-fluid padding-gap">
+      <div class="container-fluid">
+        <div class="row align-items-start">
+
+          <!-- Left Image -->
+          <div class="col-12 col-md-4 mb-4">
+            <div class="whyus-image">
+              <img src="/assets/images/MD-FAHIM-TAYEBEE-IMAGE21.png" alt="Why Choose F.Tayebee" class="img-fluid" />
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="col-12 col-md-8">
+            <div class="row">
+
+              <!-- Quick Links -->
+              <div class="col-12 col-md-4 mb-4">
+                <h5 class="fw-bold mb-3">Quick Links</h5>
+                <ul class="footer-links">
+                  <li><a href="#about">About Me</a></li>
+                  <li><a href="#skills">Skills</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#projects">Projects</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </div>
+
+              <!-- Social Media -->
+              <div class="col-12 col-md-4 mb-4">
+                <h5 class="fw-bold mb-3">Social Media</h5>
+                <ul class="footer-links">
+                  <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                  <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                  <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                  <li><a href="mailto:you@email.com">Email</a></li>
+                </ul>
+              </div>
+
+              <!-- Projects -->
+              <div class="col-12 col-md-4 mb-4">
+                <h5 class="fw-bold mb-3">Projects</h5>
+                <ul class="footer-links">
+                  <li><a href="#">E-commerce Platform</a></li>
+                  <li><a href="#">Billing System</a></li>
+                  <li><a href="#">POS System</a></li>
+                  <li><a href="#">Portfolio Website</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="copyright-widget container-fluid padding-gap">
+      <div class="container-fluid">
+        <div class="row ">
+          <div class="col-6">
+            <p class="copyright-text">All rights reserved. Copyright @2025</p>
+          </div>
+          <div class="col-6 text-right">
+            <ul class="copyright-menu">
+              <li>
+                <a class="footer-menu-item" href="/privacy-policy">Privacy Policy</a>
+              </li>
+              <li>
+                <a class="footer-menu-item" href="/privacy-policy">Terms & Conditions</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Widgets End -->
+  </main>
+
+  <script src="/assets/plugins/jquery-3.7.1.min.js"></script>
+  <script src="/assets/plugins/bootstrap-5.3.8/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="assets/plugins/fontawesome-7.1.0/js/all.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+
 </html>

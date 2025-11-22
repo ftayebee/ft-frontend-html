@@ -60,8 +60,48 @@ $(document).ready(function () {
         },
     });
 
-    const marquee = document.querySelector('.marquee-content');
+    const marquee = document.querySelector('.sec-banner .marquee-content');
     if (marquee) {
         marquee.innerHTML += marquee.innerHTML;
     }
+
+    const industriesMarquee = document.querySelector('.industries-section .marquee-content');
+    if (industriesMarquee) {
+        industriesMarquee.innerHTML += industriesMarquee.innerHTML;
+    }
+
+    document.querySelectorAll('.dev-step').forEach(step => {
+        step.addEventListener('mouseenter', function () {
+
+            document.querySelectorAll('.dev-step').forEach(s => s.classList.remove('active'));
+            this.classList.add('active');
+
+            const imgSrc = this.getAttribute('data-image');
+            const img = document.getElementById('dev-main-image');
+
+            img.style.opacity = 0;
+            setTimeout(() => {
+                img.src = imgSrc;
+                img.style.opacity = 1;
+            }, 200);
+        });
+    });
+
+    const testimonialSwiper = new Swiper('.testimonial-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        }
+    });
 });
