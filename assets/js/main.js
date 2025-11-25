@@ -104,4 +104,38 @@ $(document).ready(function () {
             disableOnInteraction: false,
         }
     });
+
+    document.addEventListener("scroll", function () {
+        const cards = document.querySelectorAll(".dev-sticky-card");
+        const img = document.getElementById("dev-main-image");
+
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top <= 150 && rect.bottom >= 150) {
+                img.src = card.getAttribute("data-image");
+            }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const lines = document.querySelectorAll(".ft-typewriter-lines .line");
+        let delay = 0;
+
+        lines.forEach(line => {
+            setTimeout(() => {
+                line.style.opacity = 1;
+                let width = 0;
+                const text = line.textContent;
+                line.textContent = "";
+
+                const typeInterval = setInterval(() => {
+                    line.textContent += text[width];
+                    width++;
+                    if (width === text.length) clearInterval(typeInterval);
+                }, 50); // typing speed
+            }, delay);
+            delay += 1500; // delay before next line starts
+        });
+    });
+
 });
