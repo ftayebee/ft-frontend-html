@@ -205,10 +205,10 @@
 .bg-item:hover {
     border-color: var(--primary-color);
 }
-.bg-item:nth-child(1){ background-image: url(/assets/images/banner-bg2.png);}
-.bg-item:nth-child(2){ background-image: url(/assets/images/banner-bg.png);}
-.bg-item:nth-child(3){ background-image: url(/assets/images/banner-bg3.png);}
-.bg-item:nth-child(4){ background-image: url(/assets/images/banner-bg4.png);}
+.bg-item:nth-child(1){ background-image: url(./../images/banner-bg2.png);}
+.bg-item:nth-child(2){ background-image: url(./../images/banner-bg.png);}
+.bg-item:nth-child(3){ background-image: url(./../images/banner-bg3.png);}
+.bg-item:nth-child(4){ background-image: url(./../images/banner-bg4.png);}
 
 /* Color items */
 .theme-colors {
@@ -411,7 +411,7 @@ body {
  * ------------------------------------------ */
 .sec-banner {
     height: 100vh;
-    background: url(/assets/images/banner-bg2.png) center/cover no-repeat;
+    background: url(./../images/banner-bg2.png) center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
@@ -935,7 +935,7 @@ body {
  * ------------------------------------------ */
 .pricing-section {
     padding: 100px 150px;
-    background-image: url(/assets/images/hacker-working-computer-with-code.jpg);
+    background-image: url(./../images/hacker-working-computer-with-code.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -1176,7 +1176,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, #ff987b, #f58b6d);
+    background: radial-gradient(circle at center, var(--primary-color), var(--primary-color-dark));
     z-index: 0;
 }
 
@@ -1832,7 +1832,7 @@ body {
 }
 
 .cta-content {
-    background-image: url(/assets/images/cta-bg2.png);
+    background-image: url(./../images/cta-bg2.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1857,6 +1857,9 @@ body {
 .cta-image {
     max-height: 520px;
     overflow: hidden;
+}
+.cta-image img{
+    width: 100%;
 }
 
 .cta-section .btn-glass {
