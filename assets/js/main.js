@@ -138,4 +138,72 @@ $(document).ready(function () {
         });
     });
 
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.2, // Trigger when 20% of element is visible
+        }
+    );
+
+    // Observe each element
+    revealElements.forEach(el => observer.observe(el));
+
+    const openBtn = document.getElementById("openThemePanel");
+    const panel = document.getElementById("theme-panel");
+    const backdrop = document.getElementById("theme-backdrop");
+
+    // Open Panel
+    openBtn.addEventListener("click", () => {
+        panel.classList.add("active");
+        backdrop.classList.add("active");
+    });
+
+    // Close Panel When Clicking Backdrop
+    backdrop.addEventListener("click", () => {
+        panel.classList.remove("active");
+        backdrop.classList.remove("active");
+    });
+
+    /* ===========================
+    CHANGE BANNER BACKGROUND
+    =========================== */
+    document.querySelectorAll(".bg-item").forEach(item => {
+        item.addEventListener("click", () => {
+            const bg = item.dataset.bg;
+            document.querySelectorAll(".bg-item").forEach(item => {
+                item.addEventListener("click", () => {
+                    const bg = item.dataset.bg;
+                    const banner = document.querySelector(".sec-banner");
+
+                    if (banner) {
+                        banner.style.backgroundImage = `url(${bg})`;
+                        banner.style.backgroundSize = "cover";
+                        banner.style.backgroundPosition = "center";
+                    }
+                });
+            });
+
+        });
+    });
+
+    /* ===========================
+    CHANGE THEME COLOR
+    =========================== */
+    document.querySelectorAll(".color-item").forEach(color => {
+        color.addEventListener("click", () => {
+            const theme = color.dataset.theme;
+            console.log(theme)
+            document.body.setAttribute("data-theme", theme);
+        });
+    });
+
 });

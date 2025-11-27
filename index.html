@@ -5,6 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>F.Tayebee Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/plugins/bootstrap-5.3.8/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
@@ -13,7 +20,41 @@
   <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 
-<body data-theme="dark">
+<body data-theme="dark-green">
+  <button class="btn-theme-setting" id="openThemePanel">
+    <i class="ri-settings-2-line"></i>
+  </button>
+  <div id="theme-backdrop"></div>
+
+  <!-- Right Offcanvas Panel -->
+  <aside id="theme-panel">
+    
+    <h3>Theme Settings</h3>
+
+    <!-- Banner Background -->
+    <div class="setting-section">
+      <h4>Banner Background</h4>
+      <div class="bg-options">
+        <div class="bg-item" data-bg="./assets/images/banner-bg2.png"></div>
+        <div class="bg-item" data-bg="./assets/images/banner-bg.png"></div>
+        <div class="bg-item" data-bg="./assets/images/banner-bg3.png"></div>
+        <div class="bg-item" data-bg="./assets/images/banner-bg4.png"></div>
+      </div>
+    </div>
+
+    <!-- Theme Colors -->
+    <div class="setting-section">
+      <h4>Theme Colors</h4>
+      <div class="theme-colors">
+        <div class="color-item" data-theme="dark-green" style="background:#4CAF50"></div>
+        <div class="color-item" data-theme="dark-orange" style="background:#FF987B"></div>
+        <div class="color-item" data-theme="dark-purple" style="background:#7B57FF"></div>
+        <div class="color-item" data-theme="dark-teal" style="background:#009688"></div>
+      </div>
+    </div>
+
+  </aside>
+
   <main class="main-container">
     <!-- <div class="webgl" data-us-project="jSQIShw8nRxgcNnhfv18"></div> -->
     <div class="webgl-glass-cursor"></div>
@@ -23,9 +64,9 @@
       <div class="container-fluid d-flex justify-content-between align-items-center">
         <!-- Left: Logo -->
         <a class="navbar-brand" href="#">
-          <img src="/assets/images/FTAYEBEE-LIGHT.png" alt="F.Tayebee Logo" height="60"
+          <img src="/assets/images/sample-logo.png" alt="F.Tayebee Logo" height="60"
             class="logo-dark d-inline-block align-top" />
-          <img src="/assets/images/FTAYEBEE-DARK.png" alt="F.Tayebee Logo" height="60"
+          <img src="/assets/images/sample-logo.png" alt="F.Tayebee Logo" height="60"
             class="logo-light d-inline-block align-top" />
         </a>
 
@@ -90,23 +131,30 @@
 
     <!-- Section: Banner Start -->
     <section class="sec-banner position-relative padding-gap">
-      <span class="txt-bg-overlay">F.TAYEBEE</span>
+      <span class="txt-bg-overlay">JONATHAN</span>
 
       <div class="container-fluid h-100 d-flex align-items-center justify-content-between">
-        <div class="banner-content">
-          <span>Crafting Distinctive Digital Identities</span>
-          <h1 class="banner-title">
-            Unlok the leader within. Grow Your Business with Confidence
-          </h1>
-          <p class="banner-subtitle">
-            Proven strategies, real-world tools, and expert guidance<br />to
-            take your business to next level.
-          </p>
-          <a href="#portfolio" class="btn btn-primary btn-glass mt-4">View My Work</a>
-        </div>
+        <div class="row h-100 d-flex align-items-center">
+          <div class="col-7">
+            <div class="banner-content">
+              <span>Crafting Distinctive Digital Identities</span>
+              <h1 class="banner-title">
+                Unlok the leader within. Grow Your Business with Confidence
+              </h1>
+              <p class="banner-subtitle">
+                Proven strategies, real-world tools, and expert guidance<br />to
+                take your business to next level.
+              </p>
+              <a href="#portfolio" class="btn btn-primary btn-glass mt-4">View My Work</a>
+            </div>
 
-        <div class="banner-image d-none d-lg-block">
-          <img src="/assets/images/MD-FAHIM-TAYEBEE-IMAGE23.png" alt="F.Tayebee" />
+
+          </div>
+          <div class="col-5">
+            <div class="banner-image d-none d-lg-block">
+              <img src="/assets/images/banner-img.png" alt="F.Tayebee" />
+            </div>
+          </div>
         </div>
 
         <div class="glass-blur"></div>
@@ -142,15 +190,15 @@
     <!-- Section: Technologies Expertise Start -->
     <section class="sec-tech position-relative padding-gap">
       <div class="container-fluid h-100 text-center">
-        <h2 class="banner-title">
+        <h2 class="banner-title scroll-reveal from-bottom">
           <span class="highlight">Technologies</span> & Expertise
         </h2>
-        <p class="section-subtitle mb-5">
+        <p class="section-subtitle mb-5 scroll-reveal from-bottom">
           I build modern, scalable, and elegant web solutions using these
           tools:
         </p>
 
-        <div class="swiper techSwiper">
+        <div class="swiper techSwiper scroll-reveal from-bottom">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="/assets/images/tech/html.png" alt="HTML5" />
@@ -192,20 +240,20 @@
     <section class="about-sec">
       <div class="about-wrapper">
         <!-- Left Image -->
-        <div class="about-image">
-          <img src="/assets/images/about-img.png" alt="About F.Tayebee" />
+        <div class="about-image scroll-reveal from-left">
+          <img src="/assets/images/about-img.jpg" alt="About F.Tayebee" />
         </div>
 
         <!-- Right Content -->
         <div class="about-content">
-          <span>About Me</span>
+          <span class="scroll-reveal from-bottom">About Me</span>
 
-          <h2 class="about-title">
+          <h2 class="about-title scroll-reveal from-bottom">
             Crafting Modern
             <span class="highlight">Web Experiences</span>
           </h2>
 
-          <p class="about-subtitle">
+          <p class="about-subtitle scroll-reveal from-bottom">
             I build fast, scalable, and modern web applications using PHP,
             Laravel, Vue.js, Tailwind CSS, Bootstrap, jQuery, and JavaScript.
             With over 5 years of experience, I specialize in creating secure
@@ -216,7 +264,7 @@
           </p>
 
           <div class="benefit-grid">
-            <div class="benefit-item glass-box" data-tilt data-glass-zoom>
+            <div class="benefit-item glass-box scroll-reveal from-right" data-tilt data-glass-zoom>
               <div class="icon">
                 <i class="fa fa-code"></i>
               </div>
@@ -227,7 +275,7 @@
               </p>
             </div>
 
-            <div class="benefit-item glass-box" data-tilt data-glass-zoom>
+            <div class="benefit-item glass-box scroll-reveal from-right" data-tilt data-glass-zoom>
               <div class="icon">
                 <i class="fa fa-layer-group"></i>
               </div>
@@ -238,7 +286,7 @@
               </p>
             </div>
 
-            <div class="benefit-item glass-box" data-tilt data-glass-zoom>
+            <div class="benefit-item glass-box scroll-reveal from-right" data-tilt data-glass-zoom>
               <div class="icon">
                 <i class="fa-brands fa-stack-overflow"></i>
               </div>
@@ -249,7 +297,7 @@
               </p>
             </div>
 
-            <div class="benefit-item glass-box" data-tilt data-glass-zoom>
+            <div class="benefit-item glass-box scroll-reveal from-right" data-tilt data-glass-zoom>
               <div class="icon">
                 <i class="fa-solid fa-gauge"></i>
               </div>
@@ -261,7 +309,7 @@
             </div>
           </div>
 
-          <a href="#portfolio" class="btn btn-glass">View My Work</a>
+          <a href="#portfolio" class="btn btn-glass scroll-reveal from-right">View My Work</a>
         </div>
       </div>
     </section>
@@ -269,21 +317,21 @@
 
     <!-- Section: Services Start -->
     <section class="services-section container-fluid padding-gap" id="services">
-      <span class="section-tag text-center d-block"><img src="/assets/images/icons/asterisk-icon.png" width="24"
+      <span class="section-tag text-center d-block scroll-reveal from-bottom"><img src="/assets/images/icons/asterisk-icon.png" width="24"
           height="25" alt="" />Services</span>
 
-      <h2 class="section-title text-center">
+      <h2 class="section-title text-center scroll-reveal from-bottom">
         Services <span class="highlight">Offered</span>
       </h2>
 
-      <p class="section-subtitle m-auto text-center">
+      <p class="section-subtitle m-auto text-center scroll-reveal from-bottom">
         High-quality development services tailored to bring your digital ideas
         to life through modern, scalable, and user-centered solutions.
       </p>
 
       <div class="services-grid mt-5">
         <!-- Service 1 -->
-        <div class="service-card d-flex flex-column justify-content-between" data-tilt data-glass-zoom>
+        <div class="service-card d-flex flex-column justify-content-between scroll-reveal from-bottom" data-tilt data-glass-zoom>
           <div class="service-header d-flex justify-content-between align-items-center">
             <div class="service-icon">
               <i class="ri-code-s-slash-line"></i>
@@ -307,7 +355,7 @@
         </div>
 
         <!-- Service 2 -->
-        <div class="service-card d-flex flex-column justify-content-between" data-tilt data-glass-zoom>
+        <div class="service-card d-flex flex-column justify-content-between scroll-reveal from-bottom" data-tilt data-glass-zoom>
           <div class="service-header d-flex justify-content-between align-items-center">
             <div class="service-icon">
               <i class="ri-database-2-line"></i>
@@ -331,7 +379,7 @@
         </div>
 
         <!-- Service 3 -->
-        <div class="service-card d-flex flex-column justify-content-between" data-tilt data-glass-zoom>
+        <div class="service-card d-flex flex-column justify-content-between scroll-reveal from-bottom" data-tilt data-glass-zoom>
           <div class="service-header d-flex justify-content-between align-items-center">
             <div class="service-icon">
               <i class="ri-layout-4-line"></i>
@@ -355,7 +403,7 @@
         </div>
 
         <!-- Service 4 -->
-        <div class="service-card d-flex flex-column justify-content-between" data-tilt data-glass-zoom>
+        <div class="service-card d-flex flex-column justify-content-between scroll-reveal from-bottom" data-tilt data-glass-zoom>
           <div class="service-header d-flex justify-content-between align-items-center">
             <div class="service-icon">
               <i class="ri-speed-up-line"></i>
@@ -379,7 +427,7 @@
         </div>
 
         <!-- Service 5 -->
-        <div class="service-card d-flex flex-column justify-content-between" data-tilt data-glass-zoom>
+        <div class="service-card d-flex flex-column justify-content-between scroll-reveal from-bottom" data-tilt data-glass-zoom>
           <div class="service-header d-flex justify-content-between align-items-center">
             <div class="service-icon">
               <i class="ri-tools-line"></i>
@@ -403,7 +451,7 @@
         </div>
 
         <!-- Service 6 -->
-        <div class="service-card d-flex flex-column justify-content-between" data-tilt data-glass-zoom>
+        <div class="service-card d-flex flex-column justify-content-between scroll-reveal from-bottom" data-tilt data-glass-zoom>
           <div class="service-header d-flex justify-content-between align-items-center">
             <div class="service-icon">
               <i class="ri-shopping-cart-2-line"></i>
@@ -426,7 +474,7 @@
           </div>
         </div>
         <!-- Service 7 -->
-        <div class="service-card d-flex flex-column justify-content-between" data-tilt data-glass-zoom>
+        <div class="service-card d-flex flex-column justify-content-between scroll-reveal from-bottom" data-tilt data-glass-zoom>
           <div class="service-header d-flex justify-content-between align-items-center">
             <div class="service-icon">
               <i class="ri-wordpress-line"></i>
@@ -449,7 +497,7 @@
           </div>
         </div>
         <!-- Service 8 -->
-        <div class="service-card d-flex flex-column justify-content-between" data-tilt data-glass-zoom>
+        <div class="service-card d-flex flex-column justify-content-between scroll-reveal from-bottom" data-tilt data-glass-zoom>
           <div class="service-header d-flex justify-content-between align-items-center">
             <div class="service-icon">
               <i class="ri-store-2-line"></i>
@@ -479,17 +527,17 @@
     <section class="pricing-section container-fluid padding-gap">
       <div class="section-header d-flex flex-row align-items-center justify-content-between mb-5">
         <div>
-          <span class="section-tag d-block">
+          <span class="section-tag d-block scroll-reveal from-left">
             <img src="/assets/images/icons/asterisk-icon.png" width="24" height="25" alt="asterisk icon" />
             Pricing
           </span>
 
-          <h2 class="section-title text-left">
+          <h2 class="section-title text-left scroll-reveal from-left">
             Choose a <span class="highlight">Plan</span> That Fits Your Needs
           </h2>
         </div>
 
-        <p class="section-subtitle text-left">
+        <p class="section-subtitle text-left scroll-reveal from-right">
           Flexible pricing plans tailored for developers, startups, and
           businesses looking for powerful, scalable solutions.
         </p>
@@ -497,7 +545,7 @@
 
       <div class="section-content pricing-grid">
         <!-- Basic Plan -->
-        <div class="pricing-card" data-tilt data-glass-zoom>
+        <div class="pricing-card scroll-reveal from-left" data-tilt data-glass-zoom>
           <div class="pricing-content">
             <div class="pricing-badge">Basic</div>
 
@@ -519,7 +567,7 @@
         </div>
 
         <!-- Standard Plan -->
-        <div class="pricing-card" data-tilt data-glass-zoom>
+        <div class="pricing-card scroll-reveal from-left" data-tilt data-glass-zoom>
           <div class="pricing-content">
             <div class="pricing-badge">Standard</div>
 
@@ -541,7 +589,7 @@
         </div>
 
         <!-- Professional Plan -->
-        <div class="pricing-card featured" data-tilt data-glass-zoom>
+        <div class="pricing-card featured scroll-reveal from-right" data-tilt data-glass-zoom>
           <span class="recommend-tag">recommended</span>
           <div class="pricing-content">
             <div class="pricing-badge">Professional</div>
@@ -566,7 +614,7 @@
         </div>
 
         <!-- Enterprise Plan -->
-        <div class="pricing-card" data-tilt data-glass-zoom>
+        <div class="pricing-card scroll-reveal from-right" data-tilt data-glass-zoom>
           <div class="pricing-content">
             <div class="pricing-badge">Enterprise</div>
 
@@ -597,7 +645,7 @@
       <div class="row align-items-center">
         <div class="col-5">
           <div class="whyus-image">
-            <img src="/assets/images/MD-FAHIM-TAYEBEE-IMAGE21.png" alt="Why Choose F.Tayebee" />
+            <img src="/assets/images/why-me.jpg" alt="Why Choose F.Tayebee" />
           </div>
         </div>
 
@@ -1064,7 +1112,7 @@
         </div>
         <div class="col-5">
           <div class="cta-image">
-            <img src="/assets/images/MD-FAHIM-TAYEBEE-IMAGE23.png" alt="Contact F.Tayebee" />
+            <img src="/assets/images/cta-img.png" alt="Contact F.Tayebee" />
           </div>
         </div>
       </div>
@@ -1078,7 +1126,7 @@
 
           <!-- Logo -->
           <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <img src="./assets/images/FTAYEBEE-LIGHT.png" alt="F.Tayebee Logo" height="60"
+            <img src="./assets/images/sample-logo.png" alt="F.Tayebee Logo" height="60"
               class="d-inline-block align-top" />
           </div>
 
@@ -1098,7 +1146,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="footer-widget container-fluid padding-gap">
       <div class="container-fluid">
@@ -1155,7 +1202,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="copyright-widget container-fluid padding-gap">
       <div class="container-fluid">
