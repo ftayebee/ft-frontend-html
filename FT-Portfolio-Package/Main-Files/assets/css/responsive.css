@@ -1,0 +1,119 @@
+/* ============================================================================
+   RESPONSIVE.CSS  —  Mobile-first overrides & breakpoint adaptations
+   ----------------------------------------------------------------------------
+   Breakpoints: 1440 / 1200 / 992 / 768 / 480 (max-width, desktop-down).
+   Goal: a genuine mobile experience — reorder, simplify, never overflow.
+   ========================================================================== */
+
+/* ---- 1200px and below ----------------------------------------------------- */
+@media (max-width: 1200px) {
+  .hero__inner { gap: 2.5rem; }
+  .bento { grid-template-columns: repeat(4, 1fr); }
+  .service-card,
+  .service-card--wide,
+  .service-card--feature { grid-column: span 2; }
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-facts { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- 992px and below (tablet) --------------------------------------------- */
+@media (max-width: 992px) {
+  :root { --header-height: 70px; --header-height-compact: 60px; }
+
+  /* Header → hamburger */
+  .primary-nav { display: none; }
+  .header__actions .btn--ghost,
+  .header__actions .btn--primary { display: none; }
+  .nav-toggle { display: inline-flex; }
+
+  /* Hero → stacked, portrait under content */
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__media { order: -1; max-width: 420px; margin-inline: auto; }
+  .floating-chip--exp { left: 0; }
+  .floating-chip--avail { right: 0; }
+  .hero__title { font-size: clamp(2.5rem, 2rem + 5vw, 4rem); }
+
+  /* About / splits stack (also handled in layout.css) */
+  .about__signature { right: 0; }
+
+  /* Skills single column */
+  .skills__grid { grid-template-columns: 1fr; }
+
+  /* Process visual hidden already; keep grid 2-col */
+  .process-step { grid-template-columns: auto 1fr; }
+
+  /* Contact stacks */
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .site-footer__top { grid-template-columns: 1fr 1fr; }
+  .site-footer__about { grid-column: 1 / -1; max-width: 48ch; }
+
+  /* Case study */
+  .case-gallery { grid-template-columns: 1fr; }
+  .metric-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- 768px and below (mobile) --------------------------------------------- */
+@media (max-width: 768px) {
+  .bento { grid-template-columns: 1fr; }
+  .service-card,
+  .service-card--wide,
+  .service-card--feature { grid-column: 1 / -1; min-height: 0; }
+
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card--featured { order: -1; }   /* show recommended first */
+
+  /* Featured work stacks; reset alternation order */
+  .work-item { grid-template-columns: 1fr; }
+  .work-item:nth-child(even) .work-item__media { order: 0; }
+
+  /* Testimonials: keep horizontal scroll-snap (works great on mobile) */
+
+  /* Timeline tighter */
+  .timeline__item { padding-left: 2.5rem; padding-bottom: 2rem; }
+
+  /* Project nav stacks */
+  .project-nav { grid-template-columns: 1fr; }
+  .project-nav__link--next { text-align: left; align-items: flex-start; }
+
+  /* Forms full width */
+  .form-row, .form-row--3 { grid-template-columns: 1fr; }
+
+  /* Meta list single column */
+  .meta-list { grid-template-columns: 1fr; }
+
+  /* Reduce floating chip offsets so nothing overflows */
+  .floating-chip--exp { top: 4%; }
+  .floating-chip--avail { bottom: 4%; }
+
+  /* Section rhythm a touch tighter */
+  :root { --section-gap: clamp(3rem, 2rem + 5vw, 5rem); }
+}
+
+/* ---- 480px and below (small mobile) --------------------------------------- */
+@media (max-width: 480px) {
+  .hero__actions .btn { flex: 1 1 100%; }
+  .hero__stats { gap: 1.25rem 2rem; }
+  .footer-col { }
+  .site-footer__top { grid-template-columns: 1fr; gap: 2rem; }
+  .case-facts { grid-template-columns: 1fr; }
+  .final-cta { padding: 2rem 1.5rem; border-radius: var(--radius-lg); }
+  .floating-chip { padding: 0.55rem 0.75rem; }
+  .floating-chip__num { font-size: 1rem; }
+  /* Stack process number above text on tiny screens */
+  .process-step { grid-template-columns: 1fr; gap: 1rem; }
+  .pagination a, .pagination span { min-width: 40px; height: 40px; }
+}
+
+/* ---- Larger screens: show process visuals --------------------------------- */
+@media (min-width: 1100px) {
+  .process-step__visual { display: block; }
+}
+
+/* ---- Touch devices: disable custom cursor & hover-only reveals ------------ */
+@media (hover: none) {
+  body.has-custom-cursor { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+  .work-item__overlay { opacity: 1; }   /* don't hide info behind hover */
+}

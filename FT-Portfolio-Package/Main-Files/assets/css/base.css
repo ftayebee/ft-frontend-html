@@ -1,0 +1,198 @@
+/* ============================================================================
+   BASE.CSS  —  Global element styling, typography rhythm, accessibility
+   ========================================================================== */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 15% -5%, var(--color-primary-soft) 0%, transparent 35%),
+    radial-gradient(circle at 95% 8%, var(--color-secondary-soft) 0%, transparent 40%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: background-color var(--speed) var(--ease), color var(--speed) var(--ease);
+  overflow-x: hidden;
+}
+
+/* ---- HEADINGS ------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-snug); }
+h4 { font-size: var(--fs-h4); line-height: var(--lh-snug); font-weight: var(--fw-semibold); }
+h5 { font-size: 1.05rem; font-weight: var(--fw-semibold); }
+h6 { font-size: var(--fs-sm); font-weight: var(--fw-semibold); }
+
+/* ---- BODY COPY ------------------------------------------------------------ */
+p {
+  color: var(--color-text-muted);
+  max-width: 68ch;            /* comfortable reading measure */
+}
+
+strong { color: var(--color-text); font-weight: var(--fw-semibold); }
+
+small { font-size: var(--fs-sm); }
+
+/* ---- LINKS ---------------------------------------------------------------- */
+a {
+  color: var(--color-text);
+  transition: color var(--speed-fast) var(--ease);
+}
+
+a:hover { color: var(--color-primary); }
+
+/* ---- SELECTION ------------------------------------------------------------ */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text-on-accent);
+}
+
+/* ---- FOCUS (keyboard accessibility) -------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* ---- HORIZONTAL RULE ------------------------------------------------------ */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--section-gap-sm) 0;
+}
+
+/* ---- CODE ----------------------------------------------------------------- */
+code, pre, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* ---- CUSTOM SCROLLBAR ----------------------------------------------------- */
+@supports (scrollbar-color: auto) {
+  html { scrollbar-color: var(--color-surface-strong) transparent; }
+}
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-strong);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-border-strong); }
+
+/* ============================================================================
+   TYPOGRAPHY UTILITY CLASSES (reusable across pages)
+   ========================================================================== */
+
+/* Eyebrow / section tag */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+.eyebrow--center { justify-content: center; }
+.eyebrow--center::after {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-muted);
+}
+
+.text-accent { color: var(--color-primary); }
+.text-sm { font-size: var(--fs-sm); }
+.text-muted { color: var(--color-text-muted); }
+.text-faint { color: var(--color-text-faint); }
+.text-center { text-align: center; }
+.text-balance { text-wrap: balance; }
+
+/* Accent highlight inside headings */
+.highlight {
+  color: var(--color-primary);
+}
+.highlight--underline {
+  position: relative;
+  white-space: nowrap;
+}
+.highlight--underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.08em;
+  height: 0.32em;
+  background: var(--color-primary-soft);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* Gradient text (used sparingly) */
+.text-gradient {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hidden inline SVG sprite container */
+.svg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* Visually hidden but available to screen readers */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- SKIP LINK (a11y) ----------------------------------------------------- */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: var(--z-loader);
+  padding: 0.75rem 1.25rem;
+  background: var(--color-primary);
+  color: var(--color-text-on-accent);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-sm);
+  transition: top var(--speed) var(--ease);
+}
+.skip-link:focus {
+  top: 1rem;
+  color: var(--color-text-on-accent);
+}

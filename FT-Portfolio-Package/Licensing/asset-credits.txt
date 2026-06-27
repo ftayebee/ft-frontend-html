@@ -1,0 +1,45 @@
+================================================================================
+ ROWAN VALE — Creative Developer Portfolio Template
+ ASSET CREDITS & LICENSES
+================================================================================
+
+FONTS
+-----
+• Space Grotesk — Florian Karsten. SIL Open Font License 1.1.
+  https://fonts.google.com/specimen/Space+Grotesk
+• Inter — Rasmus Andersson. SIL Open Font License 1.1.
+  https://fonts.google.com/specimen/Inter
+  Loaded via Google Fonts. Both are free for commercial use. You may self-host
+  them if you prefer (download from the links above).
+
+ICONS
+-----
+• Custom inline SVG icon set, created for and included with this template.
+  Free to use and modify within your purchased project. 24×24, stroke-based.
+  Defined in each page's inline <svg id="icon-sprite"> and in
+  assets/partials/icon-sprite.html (master copy).
+
+GRAPHICS (included, original — free to use/modify in your project)
+------------------------------------------------------------------
+• assets/icons/favicon.svg          — brand mark
+• assets/images/og-image.svg        — social share image placeholder
+• assets/images/portfolio/*.svg     — abstract project cover placeholders
+
+DEMO PHOTOGRAPHS (PLACEHOLDERS — ACTION REQUIRED)
+-------------------------------------------------
+The raster photos shipped for demonstration (portrait, about image, avatars,
+backgrounds) are PLACEHOLDERS. They are NOT licensed for redistribution or
+production use.
+
+  >> Before publishing your site, REPLACE every demo photograph with your own
+     photos or properly licensed stock imagery. <<
+
+Recommended free/royalty-free sources: Unsplash, Pexels, Pixabay (check each
+license), or paid: Shutterstock, Adobe Stock, iStock.
+
+Original full-resolution copies of any pre-existing images are kept in
+assets/_originals/ (development only — exclude from your final upload).
+
+================================================================================
+ Questions about licensing? Contact the author via your marketplace account.
+================================================================================

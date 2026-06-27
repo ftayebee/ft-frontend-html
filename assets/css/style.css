@@ -1,0 +1,20 @@
+/* ============================================================================
+   STYLE.CSS  —  Single entry point for the template stylesheet.
+   ----------------------------------------------------------------------------
+   Every page links ONLY this file:
+       <link rel="stylesheet" href="assets/css/style.css" />
+
+   It imports the modular layers below, in cascade order. Edit the individual
+   files (especially variables.css) rather than this one.
+   ----------------------------------------------------------------------------
+   Rowan Vale · Creative Developer Portfolio · v1.0.0
+   ========================================================================== */
+
+@import url("variables.css");   /* design tokens & theme variables   */
+@import url("reset.css");       /* normalize & reduced-motion safety  */
+@import url("base.css");        /* typography, links, a11y, utilities */
+@import url("layout.css");      /* containers, grids, sections        */
+@import url("components.css");  /* buttons, header, cards, forms…     */
+@import url("animations.css");  /* keyframes & reveal classes         */
+@import url("pages.css");       /* section-level layouts              */
+@import url("responsive.css");  /* breakpoint overrides (load last)   */

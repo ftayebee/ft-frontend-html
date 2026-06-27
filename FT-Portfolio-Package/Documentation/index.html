@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation — Rowan Vale Portfolio Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/docs.css" />
+</head>
+<body>
+  <div class="topbar"><span class="mark">R</span> Rowan Vale — Documentation</div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <h4>Getting started</h4>
+      <a href="#intro">1. Introduction</a>
+      <a href="#features">2. Features</a>
+      <a href="#structure">3. File structure</a>
+      <a href="#open">4. Opening the template</a>
+      <h4>Customizing</h4>
+      <a href="#colors">5. Changing colors</a>
+      <a href="#fonts">6. Changing fonts</a>
+      <a href="#logo">7. Replacing the logo</a>
+      <a href="#images">8. Replacing images</a>
+      <a href="#nav">9. Editing navigation</a>
+      <a href="#services">10. Adding services</a>
+      <a href="#portfolio">11. Adding portfolio items</a>
+      <a href="#filter">12. Portfolio filtering</a>
+      <a href="#cursor">13. The custom cursor</a>
+      <a href="#anim">14. Disabling animations</a>
+      <a href="#mode">15. Dark / light mode</a>
+      <a href="#form">16. Contact form</a>
+      <a href="#seo">17. SEO metadata</a>
+      <h4>Reference</h4>
+      <a href="#deploy">18. Deployment</a>
+      <a href="#credits">19. Asset credits</a>
+      <a href="#browsers">20. Browser support</a>
+      <a href="#support">21. Support scope</a>
+      <a href="#changelog">22. Changelog</a>
+    </nav>
+
+    <main class="content">
+      <section id="intro">
+        <h1>Rowan Vale — Creative Developer Portfolio</h1>
+        <p class="lead">Thank you for purchasing this template! A premium, multi-page HTML portfolio for
+          developers, designers, freelancers and creative professionals — built with semantic HTML5,
+          modern CSS and a little vanilla JavaScript. No frameworks, no build step.</p>
+        <div class="note"><strong>Zero dependencies.</strong> No Bootstrap, jQuery, React or animation
+          libraries. Just open the HTML files — everything works.</div>
+      </section>
+
+      <section id="features">
+        <h2>2. Template features</h2>
+        <ul>
+          <li>9 HTML pages: Home, About, Services, Service Single, Portfolio, Project Single, Contact, Style Guide, 404.</li>
+          <li>Fully responsive (320px → 1920px), mobile-first.</li>
+          <li>One-file theming via CSS custom properties + 5 ready palettes.</li>
+          <li>Optional appearance customizer (accent, corners, text size, effects) with dark/light toggle.</li>
+          <li>Accessible: semantic landmarks, keyboard nav, focus states, ARIA, reduced-motion support.</li>
+          <li>Custom cursor, scroll reveals, marquee, accordion, portfolio filter — all degrade gracefully.</li>
+          <li>SEO metadata + JSON-LD structured data on every page.</li>
+        </ul>
+      </section>
+
+      <section id="structure">
+        <h2>3. File structure</h2>
+<pre><code>/ (open any .html directly)
+├── index.html, about.html, services.html, service-single.html,
+│   portfolio.html, project-single.html, contact.html,
+│   style-guide.html, 404.html
+└── assets/
+    ├── css/   variables · reset · base · layout · components ·
+    │          animations · pages · responsive · style (entry)
+    ├── js/    theme-init · main · navigation · animations · cursor ·
+    │          accordion · portfolio-filter · theme-switcher · form
+    ├── icons/ favicon.svg
+    └── images/ (portraits, avatars, portfolio/, og-image.svg)</code></pre>
+        <p>Each page links a single stylesheet — <code>assets/css/style.css</code> — which
+          <code>@import</code>s the modular CSS layers. Scripts load with <code>defer</code> and
+          each self-initialises only if its markup is present.</p>
+      </section>
+
+      <section id="open">
+        <h2>4. How to open the template</h2>
+        <p>Double-click any <code>.html</code> file to open it in your browser — it works straight from
+          the file system. For the smoothest experience (and correct relative paths) run a tiny local
+          server from the project folder:</p>
+<pre><code># Python (any OS)
+python -m http.server 8080
+# then visit http://localhost:8080
+
+# or Node
+npx serve .</code></pre>
+      </section>
+
+      <section id="colors">
+        <h2>5. How to change colors</h2>
+        <p>Open <code>assets/css/variables.css</code>. The primary accent is two variables near the top:</p>
+<pre><code>--color-primary: #9ee86f;        /* main accent */
+--color-primary-strong: #73cf45; /* darker shade for gradients */</code></pre>
+        <p>Change these to your brand color and the whole site updates. The file also includes
+          <strong>5 alternate palettes</strong> (Lime, Purple, Cyan, Orange, Monochrome) in comments —
+          copy one into <code>:root</code> to use it as the default. Backgrounds, surfaces, text and
+          borders are all variables in the same file.</p>
+        <div class="note">Visitors can also switch the accent live via the on-page customizer panel
+          (the gear button on the right edge). Their choice is saved in <code>localStorage</code>.</div>
+      </section>
+
+      <section id="fonts">
+        <h2>6. How to change fonts</h2>
+        <p>Two families are used: <strong>Space Grotesk</strong> (display) and <strong>Inter</strong> (body).
+          To swap them:</p>
+        <ol>
+          <li>Update the Google Fonts <code>&lt;link&gt;</code> in each page's <code>&lt;head&gt;</code> (or self-host).</li>
+          <li>Update <code>--font-display</code> and <code>--font-body</code> in <code>variables.css</code>.</li>
+        </ol>
+      </section>
+
+      <section id="logo">
+        <h2>7. How to replace the logo</h2>
+        <p>The logo is an inline SVG mark plus the wordmark <code>Rowan.</code> in the header and footer.
+          Search the HTML for <code>class="brand"</code> and edit the <code>&lt;span class="brand__name"&gt;</code>
+          text. To change the mark, edit the inline <code>&lt;svg class="brand__mark"&gt;</code> or replace
+          <code>assets/icons/favicon.svg</code>. Update the favicon <code>&lt;link&gt;</code> tags too.</p>
+      </section>
+
+      <section id="images">
+        <h2>8. How to replace images</h2>
+        <p>Demo images live in <code>assets/images/</code> (portraits, <code>portfolio/</code> covers,
+          avatars). Replace a file or update the <code>src</code>. Always keep the <code>width</code> and
+          <code>height</code> attributes (they prevent layout shift) and write meaningful <code>alt</code> text.</p>
+        <div class="note warn"><strong>Optimize before shipping.</strong> Large photos slow your site.
+          Export at the size you display and compress (TinyPNG, Squoosh, or WebP/AVIF). The hero image is
+          intentionally <em>not</em> lazy-loaded; below-the-fold images use <code>loading="lazy"</code>.</div>
+      </section>
+
+      <section id="nav">
+        <h2>9. How to edit navigation</h2>
+        <p>The header and mobile drawer are repeated on each page. Edit the <code>.primary-nav__list</code>
+          and <code>.mobile-drawer__list</code> items. Mark the current page's link with
+          <code>aria-current="page"</code> (already set per page).</p>
+        <div class="note">Tip: the dev-only <code>assets/partials/</code> folder contains the shared
+          header/footer (<code>_head.html</code>, <code>_foot.html</code>) and a generator
+          (<code>build-pages.sh</code>) if you prefer editing chrome in one place and regenerating.</div>
+      </section>
+
+      <section id="services">
+        <h2>10. How to add services</h2>
+        <p>In <code>services.html</code> / <code>index.html</code>, copy a <code>&lt;article class="service-card"&gt;</code>
+          block. Change the icon (<code>&lt;use href="#i-…"&gt;</code>), the number, title, description and link.
+          Add <code>service-card--wide</code> or <code>service-card--feature</code> for larger bento tiles.</p>
+      </section>
+
+      <section id="portfolio">
+        <h2>11. How to add portfolio items</h2>
+        <p>In <code>portfolio.html</code>, copy a <code>&lt;a class="project-card"&gt;</code> block inside
+          <code>.project-grid</code>. Set its image, title, year and — important for filtering — the
+          <code>data-category</code> attribute (space-separated for multiple categories).</p>
+      </section>
+
+      <section id="filter">
+        <h2>12. How portfolio filtering works</h2>
+        <p>Filter buttons carry <code>data-filter="key"</code>; cards carry <code>data-category="key"</code>.
+          <code>portfolio-filter.js</code> shows/hides cards by toggling <code>.is-hidden</code> and updates
+          <code>aria-pressed</code>. Without JavaScript, all projects remain visible — nothing is hidden, so
+          the page stays usable. The "Load more" button reveals a hidden <code>[data-load-more-target]</code> group.</p>
+      </section>
+
+      <section id="cursor">
+        <h2>13. How to configure the cursor</h2>
+        <p>The custom cursor (dot + ring) is an enhancement. It auto-disables on touch devices and when
+          <em>reduce motion</em> is set. To turn it off globally, open <code>assets/js/cursor.js</code> and set:</p>
+<pre><code>var ENABLE_CURSOR = false;</code></pre>
+        <p>Or remove the <code>.cursor-dot</code> / <code>.cursor-ring</code> markup, or toggle it from the
+          customizer panel. The native cursor is the fallback. Add <code>data-cursor="view"</code> to any
+          element to show the "View" label on hover.</p>
+      </section>
+
+      <section id="anim">
+        <h2>14. How to disable animations</h2>
+        <p>Toggle "Scroll animations" off in the customizer (adds <code>.no-anim</code> to
+          <code>&lt;html&gt;</code>), or remove the <code>reveal-*</code> classes from markup. The template
+          fully honours the OS <em>prefers-reduced-motion</em> setting automatically. Content is never
+          permanently hidden — if JS is disabled, everything still shows (a <code>.no-js</code> fallback).</p>
+      </section>
+
+      <section id="mode">
+        <h2>15. How to configure dark / light mode</h2>
+        <p>Dark is the primary design. The header/customizer toggle switches to light by setting
+          <code>data-theme="light"</code> on <code>&lt;html&gt;</code> (see the light palette in
+          <code>variables.css</code>). The choice persists via <code>localStorage</code> and
+          <code>theme-init.js</code> applies it before first paint to avoid flashing. On a first visit the
+          OS <em>prefers-color-scheme</em> is respected. To remove the feature entirely, delete the
+          theme toggle buttons and <code>theme-switcher.js</code>.</p>
+      </section>
+
+      <section id="form">
+        <h2>16. How to connect the contact form</h2>
+        <div class="note warn"><strong>The contact &amp; newsletter forms are front-end demos.</strong>
+          They validate and show success/error UI but do <em>not</em> send anything. You must connect a backend.</div>
+        <p>Easiest options (no server code):</p>
+        <ul>
+          <li><strong>Formspree:</strong> set <code>action="https://formspree.io/f/your-id"</code> on the
+            <code>&lt;form&gt;</code>, remove the <code>data-demo-form</code> attribute, and delete the
+            <code>e.preventDefault()</code> behaviour in <code>form.js</code> (or remove the script).</li>
+          <li><strong>Netlify Forms:</strong> add <code>netlify</code> to the <code>&lt;form&gt;</code> tag and deploy to Netlify.</li>
+          <li><strong>Your own API:</strong> POST the form data to your endpoint with <code>fetch()</code> inside <code>form.js</code>.</li>
+        </ul>
+      </section>
+
+      <section id="seo">
+        <h2>17. How to update SEO metadata</h2>
+        <p>Each page's <code>&lt;head&gt;</code> contains the <code>&lt;title&gt;</code>, meta description,
+          canonical URL, Open Graph and Twitter tags, and JSON-LD structured data. Replace
+          <code>https://your-domain.com</code> placeholders, the OG image path, and the
+          <code>Person</code>/<code>ProfessionalService</code> details with your own.</p>
+      </section>
+
+      <section id="deploy">
+        <h2>18. How to deploy to shared hosting</h2>
+        <p>This is a static site. Upload the project files (the HTML files and the <code>assets/</code>
+          folder) to your host's public folder (e.g. <code>public_html</code>) via FTP or the host's file
+          manager. No database, Node, or build step is required. It also works on Netlify, Vercel, GitHub
+          Pages, Cloudflare Pages — just point them at the folder.</p>
+      </section>
+
+      <section id="credits">
+        <h2>19. Asset credits &amp; licenses</h2>
+        <p>See <code>Licensing/asset-credits.txt</code> in the package for the full list. Summary:</p>
+        <table>
+          <thead><tr><th>Asset</th><th>Source / License</th></tr></thead>
+          <tbody>
+            <tr><td>Space Grotesk, Inter</td><td>Google Fonts — SIL Open Font License</td></tr>
+            <tr><td>Icons</td><td>Custom inline SVG set included with the template</td></tr>
+            <tr><td>Portfolio covers, OG image, favicon</td><td>Original SVGs included with the template</td></tr>
+            <tr><td>Demo photos (portrait, avatars)</td><td>Placeholders — replace with your own licensed images before publishing</td></tr>
+          </tbody>
+        </table>
+        <div class="note warn"><strong>Demo photographs are not licensed for redistribution.</strong>
+          Replace them with your own photos or properly licensed stock before going live.</div>
+      </section>
+
+      <section id="browsers">
+        <h2>20. Browser compatibility</h2>
+        <p>Tested on the latest Chrome, Firefox, Edge and Safari (desktop + mobile). Requires a modern
+          browser supporting CSS custom properties, grid and <code>color-mix()</code> (all evergreen
+          browsers from ~2023 onward).</p>
+      </section>
+
+      <section id="support">
+        <h2>21. Support scope</h2>
+        <p>Support covers template bugs, included features and usage questions. It does not cover
+          third-party integrations, custom development, or backend setup. Please include your purchase
+          details and a description of the issue when contacting support.</p>
+      </section>
+
+      <section id="changelog">
+        <h2>22. Changelog</h2>
+        <p>See <code>changelog.txt</code> in the package root. Current version: <strong>1.0.0</strong>.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>© <span>2026</span> Rowan Vale Portfolio Template · Documentation v1.0.0</footer>
+</body>
+</html>

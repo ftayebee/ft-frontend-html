@@ -1,0 +1,28 @@
+================================================================================
+ ROWAN VALE — Creative Developer Portfolio Template
+ CHANGELOG
+================================================================================
+
+v1.0.0  —  2026-06-16
+---------------------
+Initial release.
+
+• 9 pages: Home, About, Services, Service Single, Portfolio, Project Single,
+  Contact, Style Guide, 404.
+• Premium dark design system built entirely on CSS custom properties.
+• 5 accent palettes (Lime, Purple, Cyan, Orange, Monochrome) + light mode.
+• Modular CSS architecture (variables, reset, base, layout, components,
+  animations, pages, responsive) loaded through a single style.css entry.
+• Vanilla-JS modules: navigation, scroll reveals (IntersectionObserver),
+  custom cursor, accordion, portfolio filter, theme switcher/customizer,
+  contact-form validation. No frameworks or libraries.
+• Inline SVG icon system (file:// safe).
+• Accessibility: skip link, ARIA, keyboard nav, focus-visible, reduced-motion,
+  no-JS fallbacks.
+• SEO metadata + JSON-LD structured data on every page.
+• Responsive 320px → 1920px.
+
+--------------------------------------------------------------------------------
+HOW TO READ VERSIONS:  MAJOR.MINOR.PATCH
+  MAJOR — breaking redesigns   MINOR — new features   PATCH — fixes
+--------------------------------------------------------------------------------

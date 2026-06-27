@@ -1,0 +1,173 @@
+  <main id="main" class="page">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero__grid-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-hero__inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a><span class="sep">/</span><span aria-current="page">Style Guide</span>
+          </nav>
+          <span class="eyebrow mt-3">Design system</span>
+          <h1 class="page-hero__title" id="page-title">Style <span class="highlight">guide</span></h1>
+          <p class="lead">Every building block in the template. Use this page to understand the system and
+            preview your customizations (try the settings panel on the right edge).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--flush-top section--pt-sm">
+      <div class="container">
+
+        <!-- COLORS -->
+        <div class="sg-block">
+          <h2>Colors</h2>
+          <p class="mb-3">Defined as CSS custom properties in <code>assets/css/variables.css</code>.</p>
+          <div class="sg-swatches">
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-primary"></div><div class="sg-swatch__meta">Primary<code>--color-primary</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-primary-strong"></div><div class="sg-swatch__meta">Primary strong<code>--color-primary-strong</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-secondary"></div><div class="sg-swatch__meta">Secondary<code>--color-secondary</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-bg"></div><div class="sg-swatch__meta">Background<code>--color-bg</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-surface"></div><div class="sg-swatch__meta">Surface<code>--color-surface</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-surface-strong"></div><div class="sg-swatch__meta">Surface strong<code>--color-surface-strong</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-text"></div><div class="sg-swatch__meta">Text<code>--color-text</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-text-muted"></div><div class="sg-swatch__meta">Text muted<code>--color-text-muted</code></div></div>
+          </div>
+        </div>
+
+        <!-- TYPOGRAPHY -->
+        <div class="sg-block">
+          <h2>Typography</h2>
+          <p class="mb-3">Display: <strong>Space Grotesk</strong> · Body: <strong>Inter</strong>. Sizes use fluid <code>clamp()</code>.</p>
+          <div class="card">
+            <p class="sg-h1-demo">Heading 1 — Display</p>
+            <h2>Heading 2 — Section</h2>
+            <h3>Heading 3 — Subsection</h3>
+            <h4>Heading 4 — Card title</h4>
+            <p class="lead mt-2">Lead paragraph — used for section introductions and intros. Comfortable line height and a constrained measure keep it readable.</p>
+            <p class="mt-2">Body paragraph. The quick brown fox jumps over the lazy dog. Good typography is invisible: it gets out of the way and lets the content speak. Line length is capped for comfortable reading.</p>
+            <p class="mt-2"><a class="link-underline" href="#main">This is an inline text link</a> with an animated underline on hover.</p>
+            <span class="eyebrow mt-3">Eyebrow label</span>
+          </div>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="sg-block">
+          <h2>Buttons</h2>
+          <div class="sg-row">
+            <a class="btn btn--primary" href="#main">Primary <svg class="icon btn__arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+            <a class="btn btn--secondary" href="#main">Secondary</a>
+            <a class="btn btn--ghost" href="#main">Ghost</a>
+            <a class="btn btn--text" href="#main">Text link <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+            <button class="btn btn--icon" aria-label="Icon button"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></button>
+          </div>
+          <div class="sg-row">
+            <a class="btn btn--primary btn--sm" href="#main">Small</a>
+            <a class="btn btn--primary" href="#main">Default</a>
+            <a class="btn btn--primary btn--lg" href="#main">Large</a>
+            <button class="btn btn--primary" disabled>Disabled</button>
+          </div>
+        </div>
+
+        <!-- BADGES / TAGS -->
+        <div class="sg-block">
+          <h2>Badges &amp; tags</h2>
+          <div class="sg-row">
+            <span class="badge">Default</span>
+            <span class="badge badge--accent">Accent</span>
+            <span class="badge badge--accent badge--status"><span class="status-dot" aria-hidden="true"></span> Available</span>
+            <span class="tag">tag</span><span class="tag">JavaScript</span><span class="tag">Vue</span>
+          </div>
+        </div>
+
+        <!-- ICONS -->
+        <div class="sg-block">
+          <h2>Icons</h2>
+          <p class="mb-3">Inline SVG sprite — stroke-based, inherit <code>currentColor</code>.</p>
+          <div class="sg-row text-accent">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-code"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-palette"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-rocket"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-mail"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-github"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-shield"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-gauge"></use></svg>
+          </div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="sg-block">
+          <h2>Cards</h2>
+          <div class="sg-grid">
+            <article class="card card--hover"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-layers"></use></svg></span><h3 class="mt-3">Standard card</h3><p>Hover to lift. Used across the template for content blocks.</p></article>
+            <article class="card"><span class="icon-tile icon-tile--neutral"><svg class="icon" aria-hidden="true"><use href="#i-server"></use></svg></span><h3 class="mt-3">Neutral icon tile</h3><p>Alternate icon-tile style for variety.</p></article>
+          </div>
+        </div>
+
+        <!-- ALERTS -->
+        <div class="sg-block">
+          <h2>Alerts</h2>
+          <div class="stack">
+            <div class="alert alert--success"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span><strong>Success.</strong> Your message has been sent.</span></div>
+            <div class="alert alert--error"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg><span><strong>Error.</strong> Please check the highlighted fields.</span></div>
+            <div class="alert alert--info"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"></use></svg><span><strong>Heads up.</strong> This is an informational message.</span></div>
+          </div>
+        </div>
+
+        <!-- FORM ELEMENTS -->
+        <div class="sg-block">
+          <h2>Form elements</h2>
+          <div class="card">
+            <div class="form-grid">
+              <div class="form-row">
+                <div class="form-field"><label class="form-label" for="sg-name">Text input</label><input class="form-control" id="sg-name" type="text" placeholder="Placeholder" /></div>
+                <div class="form-field"><label class="form-label" for="sg-sel">Select</label>
+                  <select class="form-control" id="sg-sel"><option>Option one</option><option>Option two</option></select></div>
+              </div>
+              <div class="form-field"><label class="form-label" for="sg-ta">Textarea</label><textarea class="form-control" id="sg-ta" placeholder="Message…"></textarea></div>
+              <div class="form-field is-invalid"><label class="form-label" for="sg-err">Invalid state</label><input class="form-control is-invalid" id="sg-err" type="text" value="Not quite right" /><span class="form-error">This field has an error.</span></div>
+              <label class="form-check"><input type="checkbox" checked /><span>Checkbox / consent control</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACCORDION -->
+        <div class="sg-block">
+          <h2>Accordion</h2>
+          <div class="accordion" data-accordion="single">
+            <div class="accordion__item"><h3><button class="accordion__trigger" id="sg-a1-btn" aria-expanded="false" aria-controls="sg-a1">Accordion item one<svg class="icon accordion__icon" aria-hidden="true"><use href="#i-plus"></use></svg></button></h3>
+              <div class="accordion__panel" id="sg-a1" role="region" aria-labelledby="sg-a1-btn"><div><p class="accordion__body">Accessible disclosure with <code>aria-expanded</code> and keyboard support.</p></div></div></div>
+            <div class="accordion__item"><h3><button class="accordion__trigger" id="sg-a2-btn" aria-expanded="false" aria-controls="sg-a2">Accordion item two<svg class="icon accordion__icon" aria-hidden="true"><use href="#i-plus"></use></svg></button></h3>
+              <div class="accordion__panel" id="sg-a2" role="region" aria-labelledby="sg-a2-btn"><div><p class="accordion__body">Smooth, layout-stable open/close using a CSS grid-rows transition.</p></div></div></div>
+          </div>
+        </div>
+
+        <!-- TABLE -->
+        <div class="sg-block">
+          <h2>Table</h2>
+          <div class="card" role="region" aria-label="Sample table" tabindex="0">
+            <table class="compare-table">
+              <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Support</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Starter</th><td>$890/mo</td><td>Email</td></tr>
+                <tr><th scope="row">Professional</th><td>$3,400/mo</td><td>Priority</td></tr>
+                <tr><th scope="row">Enterprise</th><td>Custom</td><td>Dedicated</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SPACING -->
+        <div class="sg-block">
+          <h2>Spacing scale</h2>
+          <div class="sg-spacing">
+            <div class="sg-spacing__bar sg-w-1">0.5rem · --mt-1</div>
+            <div class="sg-spacing__bar sg-w-2">1rem · --mt-2</div>
+            <div class="sg-spacing__bar sg-w-3">1.5rem · --mt-3</div>
+            <div class="sg-spacing__bar sg-w-4">2rem · --mt-4</div>
+            <div class="sg-spacing__bar sg-w-5">3rem · --mt-5</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>

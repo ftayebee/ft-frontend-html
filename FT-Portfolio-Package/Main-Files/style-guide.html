@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== SEO METADATA (edit per page) ================================= -->
+  <title>Style Guide — Design System · Rowan Vale</title>
+  <meta name="description" content="The Rowan Vale template design system: colors, typography, buttons, forms, cards, badges and components." />
+  <link rel="canonical" href="https://your-domain.com/style-guide.html" />
+  <meta name="theme-color" content="#090b0d" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Style Guide — Design System · Rowan Vale" />
+  <meta property="og:description" content="The Rowan Vale template design system: colors, typography, buttons, forms, cards, badges and components." />
+  <meta property="og:image" content="https://your-domain.com/assets/images/og-image.svg" />
+  <meta property="og:url" content="https://your-domain.com/style-guide.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Style Guide — Design System · Rowan Vale" />
+  <meta name="twitter:description" content="The Rowan Vale template design system: colors, typography, buttons, forms, cards, badges and components." />
+  <meta name="twitter:image" content="https://your-domain.com/assets/images/og-image.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+  <link rel="apple-touch-icon" href="./assets/icons/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/theme-init.js"></script>
+
+  <!-- Structured data: ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Rowan Vale — Creative Developer & UI/UX Designer",
+    "image": "https://your-domain.com/assets/images/og-image.svg",
+    "url": "https://your-domain.com",
+    "email": "mailto:hello@rowanvale.dev",
+    "areaServed": "Worldwide",
+    "address": { "@type": "PostalAddress", "addressLocality": "Lisbon", "addressCountry": "PT" }
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div class="preloader" role="status" aria-label="Loading">
+    <svg class="preloader__mark" viewBox="0 0 64 64" aria-hidden="true">
+      <rect width="64" height="64" rx="14" fill="none" stroke="currentColor" stroke-width="3" opacity="0.3" />
+      <path d="M15 46V18h11a8 8 0 0 1 3 15.4L33 46h-6.4l-3.3-11H21v11h-6zm6-16h4.6a3.4 3.4 0 0 0 0-6.8H21V30z" fill="currentColor" />
+    </svg>
+    <div class="preloader__bar"></div>
+    <span class="visually-hidden">Loading…</span>
+  </div>
+
+  <!-- ICON SPRITE (inlined; master copy: assets/partials/icon-sprite.html) -->
+  <svg id="icon-sprite" class="svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24"><path d="M7 7H4v6h3l-2 4h3l2-4V7zm10 0h-3v6h3l-2 4h3l2-4V7z"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+      <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="m13.4 10.6 3.6-3.6"/><path d="M3.5 18a9 9 0 1 1 17 0"/></symbol>
+      <symbol id="i-tools" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.2 5l-6.1 6.1a1.5 1.5 0 0 0 2.1 2.1l6.1-6.1a4 4 0 0 0 5-5.2l-2.4 2.4-2.1-2.1 2.5-2.2z"/></symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L23 7H6"/></symbol>
+      <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9 4.5 4h15L21 9M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9M3 9h18M9 20v-6h6v6"/></symbol>
+      <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+      <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.9 1.5-1.6 0-.8-.6-1.3-.6-2 0-.6.5-1.1 1.2-1.1H16a5 5 0 0 0 5-5c0-4.3-4-7.3-9-7.3z"/><circle cx="7.5" cy="11.5" r="1"/><circle cx="10.5" cy="7.5" r="1"/><circle cx="15" cy="8.5" r="1"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 19l7-7a2.8 2.8 0 0 0-4-4l-7 7-1 5 5-1z"/><path d="M14 6l4 4"/></symbol>
+      <symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6l-7-3z"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 -.2zM9 13l-2-2c1-4 4-8 9-9 1 5-3 8-7 9l-2 2zM14.5 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-mind-map" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7.3 11 16.7 6.8M7.3 13l9.4 4.2"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+      <symbol id="i-trending" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h3l2 5-2.5 1.5a12 12 0 0 0 5 5L17 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+      <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7z"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 4 5-4M5 21h14"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></symbol>
+      <symbol id="i-graduation" viewBox="0 0 24 24"><path d="m12 4 10 5-10 5L2 9l10-5zM6 11v5c0 1.1 2.7 2.5 6 2.5s6-1.4 6-2.5v-5"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m9 14-1.5 8L12 19l4.5 3L15 14"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M16 5a3.5 3.5 0 0 1 0 6.5M21 20c0-2.5-1.3-4.3-3.5-5"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z"/></symbol>
+      <symbol id="i-heart-pulse" viewBox="0 0 24 24"><path d="M12 20S4 14.5 4 9a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 9c0 1.2-.4 2.3-1 3.3h-3l-1.5 3-3-6L9 12H5.5"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-7.95 5.5 5.5 0 0 1 10.6-1.5A3.5 3.5 0 0 1 17.5 18H7z"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h6v6"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></symbol>
+      <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1zM16 8a5 5 0 0 1 0 8M19 5a9 9 0 0 1 0 14"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5zM20 19v3H6.5"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.3 0C6.5 2.6 5.4 2.9 5.4 2.9a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.3c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></symbol>
+      <symbol id="i-x-social" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></symbol>
+      <symbol id="i-dribbble" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5 8c4 1 9 1.5 13 .5M3.5 14c5-1.5 9 0 12 4M9 3.5c3 4 4.5 9 4.5 17"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span class="cursor-ring__label">View</span></div>
+
+  <!-- CUSTOMIZER (optional) -->
+  <button class="customizer-toggle" data-customizer-open aria-controls="customizer" aria-expanded="false" aria-label="Open appearance settings">
+    <svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg>
+  </button>
+  <aside class="customizer" id="customizer" aria-label="Appearance settings">
+    <div class="customizer__header">
+      <h2>Customize</h2>
+      <button class="btn--icon btn" data-customizer-close aria-label="Close settings">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+    <div class="customizer__body">
+      <div class="customizer__group">
+        <h3>Appearance</h3>
+        <div class="seg" role="group" aria-label="Light or dark mode">
+          <button data-theme-toggle aria-pressed="false">Dark / Light</button>
+        </div>
+      </div>
+      <div class="customizer__group">
+        <h3>Accent color</h3>
+        <div class="swatch-row">
+          <button class="swatch swatch--lime" data-accent-value="lime" aria-pressed="true" aria-label="Lime accent"></button>
+          <button class="swatch swatch--purple" data-accent-value="purple" aria-pressed="false" aria-label="Purple accent"></button>
+          <button class="swatch swatch--cyan" data-accent-value="cyan" aria-pressed="false" aria-label="Cyan accent"></button>
+          <button class="swatch swatch--orange" data-accent-value="orange" aria-pressed="false" aria-label="Orange accent"></button>
+        </div>
+      </div>
+      <div class="customizer__group">
+        <h3>Card corners</h3>
+        <div class="seg" role="group" aria-label="Corner style" data-seg="data-radius" data-seg-key="rv-radius" data-seg-default="rounded">
+          <button data-seg-value="rounded" aria-pressed="true">Rounded</button>
+          <button data-seg-value="sharp" aria-pressed="false">Sharp</button>
+        </div>
+      </div>
+      <div class="customizer__group">
+        <h3>Text size</h3>
+        <div class="seg" role="group" aria-label="Text size" data-seg="data-font-scale" data-seg-key="rv-font-scale" data-seg-default="default">
+          <button data-seg-value="default" aria-pressed="true">Default</button>
+          <button data-seg-value="large" aria-pressed="false">Large</button>
+        </div>
+      </div>
+      <div class="customizer__group">
+        <h3>Effects</h3>
+        <div class="switch-row"><span>Scroll animations</span>
+          <label class="switch"><input type="checkbox" data-toggle-animations checked /><span class="switch__track"></span></label></div>
+        <div class="switch-row"><span>Custom cursor</span>
+          <label class="switch"><input type="checkbox" data-toggle-cursor checked /><span class="switch__track"></span></label></div>
+      </div>
+      <button class="btn btn--ghost btn--block" data-customizer-reset>Reset to defaults</button>
+      <p class="customizer__note">Optional panel — remove the <code>.customizer</code> markup and
+        <code>theme-switcher.js</code> to drop it.</p>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html" aria-label="Rowan Vale — home">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="currentColor" opacity="0.12" />
+          <path d="M15 46V18h11a8 8 0 0 1 3 15.4L33 46h-6.4l-3.3-11H21v11h-6zm6-16h4.6a3.4 3.4 0 0 0 0-6.8H21V30z" fill="currentColor" />
+        </svg>
+        <span class="brand__name">Rowan<b>.</b></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a class="primary-nav__link" data-nav="home" href="index.html">Home</a></li>
+          <li><a class="primary-nav__link" data-nav="about" href="about.html">About</a></li>
+          <li><a class="primary-nav__link" data-nav="services" href="services.html">Services</a></li>
+          <li><a class="primary-nav__link" data-nav="portfolio" href="portfolio.html">Portfolio</a></li>
+          <li><a class="primary-nav__link" data-nav="contact" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="btn btn--icon" data-theme-toggle aria-pressed="false" aria-label="Toggle light and dark theme">
+          <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
+        </button>
+        <a class="btn btn--primary" href="contact.html">Let's Talk
+          <svg class="icon btn__arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        <button class="nav-toggle" data-nav-toggle aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true" aria-label="Mobile navigation">
+    <button class="btn btn--icon mobile-drawer__close" data-nav-close aria-label="Close menu">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+    </button>
+    <nav class="mobile-drawer__inner" aria-label="Mobile">
+      <ul class="mobile-drawer__list">
+        <li><a class="mobile-drawer__link" data-nav="home" href="index.html">Home</a></li>
+        <li><a class="mobile-drawer__link" data-nav="about" href="about.html">About</a></li>
+        <li><a class="mobile-drawer__link" data-nav="services" href="services.html">Services</a></li>
+        <li><a class="mobile-drawer__link" data-nav="portfolio" href="portfolio.html">Portfolio</a></li>
+        <li><a class="mobile-drawer__link" data-nav="contact" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer__footer">
+        <a class="btn btn--primary btn--block" href="contact.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-send"></use></svg> Start a Project</a>
+      </div>
+    </nav>
+  </div>
+  <main id="main" class="page">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero__grid-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-hero__inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a><span class="sep">/</span><span aria-current="page">Style Guide</span>
+          </nav>
+          <span class="eyebrow mt-3">Design system</span>
+          <h1 class="page-hero__title" id="page-title">Style <span class="highlight">guide</span></h1>
+          <p class="lead">Every building block in the template. Use this page to understand the system and
+            preview your customizations (try the settings panel on the right edge).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--flush-top section--pt-sm">
+      <div class="container">
+
+        <!-- COLORS -->
+        <div class="sg-block">
+          <h2>Colors</h2>
+          <p class="mb-3">Defined as CSS custom properties in <code>assets/css/variables.css</code>.</p>
+          <div class="sg-swatches">
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-primary"></div><div class="sg-swatch__meta">Primary<code>--color-primary</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-primary-strong"></div><div class="sg-swatch__meta">Primary strong<code>--color-primary-strong</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-secondary"></div><div class="sg-swatch__meta">Secondary<code>--color-secondary</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-bg"></div><div class="sg-swatch__meta">Background<code>--color-bg</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-surface"></div><div class="sg-swatch__meta">Surface<code>--color-surface</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-surface-strong"></div><div class="sg-swatch__meta">Surface strong<code>--color-surface-strong</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-text"></div><div class="sg-swatch__meta">Text<code>--color-text</code></div></div>
+            <div class="sg-swatch"><div class="sg-swatch__color sg-c-text-muted"></div><div class="sg-swatch__meta">Text muted<code>--color-text-muted</code></div></div>
+          </div>
+        </div>
+
+        <!-- TYPOGRAPHY -->
+        <div class="sg-block">
+          <h2>Typography</h2>
+          <p class="mb-3">Display: <strong>Space Grotesk</strong> · Body: <strong>Inter</strong>. Sizes use fluid <code>clamp()</code>.</p>
+          <div class="card">
+            <p class="sg-h1-demo">Heading 1 — Display</p>
+            <h2>Heading 2 — Section</h2>
+            <h3>Heading 3 — Subsection</h3>
+            <h4>Heading 4 — Card title</h4>
+            <p class="lead mt-2">Lead paragraph — used for section introductions and intros. Comfortable line height and a constrained measure keep it readable.</p>
+            <p class="mt-2">Body paragraph. The quick brown fox jumps over the lazy dog. Good typography is invisible: it gets out of the way and lets the content speak. Line length is capped for comfortable reading.</p>
+            <p class="mt-2"><a class="link-underline" href="#main">This is an inline text link</a> with an animated underline on hover.</p>
+            <span class="eyebrow mt-3">Eyebrow label</span>
+          </div>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="sg-block">
+          <h2>Buttons</h2>
+          <div class="sg-row">
+            <a class="btn btn--primary" href="#main">Primary <svg class="icon btn__arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+            <a class="btn btn--secondary" href="#main">Secondary</a>
+            <a class="btn btn--ghost" href="#main">Ghost</a>
+            <a class="btn btn--text" href="#main">Text link <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+            <button class="btn btn--icon" aria-label="Icon button"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></button>
+          </div>
+          <div class="sg-row">
+            <a class="btn btn--primary btn--sm" href="#main">Small</a>
+            <a class="btn btn--primary" href="#main">Default</a>
+            <a class="btn btn--primary btn--lg" href="#main">Large</a>
+            <button class="btn btn--primary" disabled>Disabled</button>
+          </div>
+        </div>
+
+        <!-- BADGES / TAGS -->
+        <div class="sg-block">
+          <h2>Badges &amp; tags</h2>
+          <div class="sg-row">
+            <span class="badge">Default</span>
+            <span class="badge badge--accent">Accent</span>
+            <span class="badge badge--accent badge--status"><span class="status-dot" aria-hidden="true"></span> Available</span>
+            <span class="tag">tag</span><span class="tag">JavaScript</span><span class="tag">Vue</span>
+          </div>
+        </div>
+
+        <!-- ICONS -->
+        <div class="sg-block">
+          <h2>Icons</h2>
+          <p class="mb-3">Inline SVG sprite — stroke-based, inherit <code>currentColor</code>.</p>
+          <div class="sg-row text-accent">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-code"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-palette"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-rocket"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-mail"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-github"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-shield"></use></svg>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-gauge"></use></svg>
+          </div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="sg-block">
+          <h2>Cards</h2>
+          <div class="sg-grid">
+            <article class="card card--hover"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-layers"></use></svg></span><h3 class="mt-3">Standard card</h3><p>Hover to lift. Used across the template for content blocks.</p></article>
+            <article class="card"><span class="icon-tile icon-tile--neutral"><svg class="icon" aria-hidden="true"><use href="#i-server"></use></svg></span><h3 class="mt-3">Neutral icon tile</h3><p>Alternate icon-tile style for variety.</p></article>
+          </div>
+        </div>
+
+        <!-- ALERTS -->
+        <div class="sg-block">
+          <h2>Alerts</h2>
+          <div class="stack">
+            <div class="alert alert--success"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span><strong>Success.</strong> Your message has been sent.</span></div>
+            <div class="alert alert--error"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg><span><strong>Error.</strong> Please check the highlighted fields.</span></div>
+            <div class="alert alert--info"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"></use></svg><span><strong>Heads up.</strong> This is an informational message.</span></div>
+          </div>
+        </div>
+
+        <!-- FORM ELEMENTS -->
+        <div class="sg-block">
+          <h2>Form elements</h2>
+          <div class="card">
+            <div class="form-grid">
+              <div class="form-row">
+                <div class="form-field"><label class="form-label" for="sg-name">Text input</label><input class="form-control" id="sg-name" type="text" placeholder="Placeholder" /></div>
+                <div class="form-field"><label class="form-label" for="sg-sel">Select</label>
+                  <select class="form-control" id="sg-sel"><option>Option one</option><option>Option two</option></select></div>
+              </div>
+              <div class="form-field"><label class="form-label" for="sg-ta">Textarea</label><textarea class="form-control" id="sg-ta" placeholder="Message…"></textarea></div>
+              <div class="form-field is-invalid"><label class="form-label" for="sg-err">Invalid state</label><input class="form-control is-invalid" id="sg-err" type="text" value="Not quite right" /><span class="form-error">This field has an error.</span></div>
+              <label class="form-check"><input type="checkbox" checked /><span>Checkbox / consent control</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACCORDION -->
+        <div class="sg-block">
+          <h2>Accordion</h2>
+          <div class="accordion" data-accordion="single">
+            <div class="accordion__item"><h3><button class="accordion__trigger" id="sg-a1-btn" aria-expanded="false" aria-controls="sg-a1">Accordion item one<svg class="icon accordion__icon" aria-hidden="true"><use href="#i-plus"></use></svg></button></h3>
+              <div class="accordion__panel" id="sg-a1" role="region" aria-labelledby="sg-a1-btn"><div><p class="accordion__body">Accessible disclosure with <code>aria-expanded</code> and keyboard support.</p></div></div></div>
+            <div class="accordion__item"><h3><button class="accordion__trigger" id="sg-a2-btn" aria-expanded="false" aria-controls="sg-a2">Accordion item two<svg class="icon accordion__icon" aria-hidden="true"><use href="#i-plus"></use></svg></button></h3>
+              <div class="accordion__panel" id="sg-a2" role="region" aria-labelledby="sg-a2-btn"><div><p class="accordion__body">Smooth, layout-stable open/close using a CSS grid-rows transition.</p></div></div></div>
+          </div>
+        </div>
+
+        <!-- TABLE -->
+        <div class="sg-block">
+          <h2>Table</h2>
+          <div class="card" role="region" aria-label="Sample table" tabindex="0">
+            <table class="compare-table">
+              <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Support</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Starter</th><td>$890/mo</td><td>Email</td></tr>
+                <tr><th scope="row">Professional</th><td>$3,400/mo</td><td>Priority</td></tr>
+                <tr><th scope="row">Enterprise</th><td>Custom</td><td>Dedicated</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SPACING -->
+        <div class="sg-block">
+          <h2>Spacing scale</h2>
+          <div class="sg-spacing">
+            <div class="sg-spacing__bar sg-w-1">0.5rem · --mt-1</div>
+            <div class="sg-spacing__bar sg-w-2">1rem · --mt-2</div>
+            <div class="sg-spacing__bar sg-w-3">1.5rem · --mt-3</div>
+            <div class="sg-spacing__bar sg-w-4">2rem · --mt-4</div>
+            <div class="sg-spacing__bar sg-w-5">3rem · --mt-5</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <!-- ===== FOOTER ==================================================== -->
+  <footer class="site-footer">
+    <div class="container container--wide">
+      <div class="site-footer__top">
+        <div class="site-footer__about footer-col">
+          <a class="brand" href="index.html" aria-label="Rowan Vale — home">
+            <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+              <rect width="64" height="64" rx="14" fill="currentColor" opacity="0.12" />
+              <path d="M15 46V18h11a8 8 0 0 1 3 15.4L33 46h-6.4l-3.3-11H21v11h-6zm6-16h4.6a3.4 3.4 0 0 0 0-6.8H21V30z" fill="currentColor" />
+            </svg>
+            <span class="brand__name">Rowan<b>.</b></span>
+          </a>
+          <p>Creative developer &amp; UI/UX designer building fast, accessible digital products for
+            startups and brands worldwide.</p>
+          <div class="social-row">
+            <a href="https://github.com" aria-label="GitHub" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg></a>
+            <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg></a>
+            <a href="https://dribbble.com" aria-label="Dribbble" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-dribbble"></use></svg></a>
+            <a href="https://x.com" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-x-social"></use></svg></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Site links">
+          <h2 class="footer-col__title">Navigate</h2>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </nav>
+        <nav class="footer-col" aria-label="Services links">
+          <h2 class="footer-col__title">Services</h2>
+          <div class="footer-links">
+            <a href="service-single.html">Web Development</a>
+            <a href="service-single.html">UI/UX Design</a>
+            <a href="service-single.html">E-commerce</a>
+            <a href="service-single.html">Performance &amp; SEO</a>
+            <a href="style-guide.html">Style Guide</a>
+          </div>
+        </nav>
+        <div class="footer-col">
+          <h2 class="footer-col__title">Newsletter</h2>
+          <p class="text-sm">Occasional notes on design &amp; development. No spam.</p>
+          <!-- DEMO ONLY: newsletter needs backend integration. The data-newsletter
+               handler in main.js only previews a confirmation message. -->
+          <form class="newsletter" action="#" method="post" data-newsletter>
+            <label class="visually-hidden" for="nl-email">Email address</label>
+            <input class="newsletter__input" id="nl-email" type="email" name="email" placeholder="you@email.com" required />
+            <button class="btn btn--primary btn--icon" type="submit" aria-label="Subscribe">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>© <span data-year>2026</span> Rowan Vale. All rights reserved.</p>
+        <nav aria-label="Legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="style-guide.html">Style Guide</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#main" aria-label="Back to top">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+  </a>
+
+  <!-- ===== SCRIPTS (deferred, modular, no dependencies) =============== -->
+  <script src="./assets/js/main.js" defer></script>
+  <script src="./assets/js/navigation.js" defer></script>
+  <script src="./assets/js/animations.js" defer></script>
+  <script src="./assets/js/accordion.js" defer></script>
+  <script src="./assets/js/portfolio-filter.js" defer></script>
+  <script src="./assets/js/cursor.js" defer></script>
+  <script src="./assets/js/theme-switcher.js" defer></script>
+  <script src="./assets/js/form.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+/* ============================================================================
+   ANIMATIONS.CSS  —  Reusable animation language
+   ----------------------------------------------------------------------------
+   Principles: animate transform/opacity only, 200–800ms, no infinite movement
+   on content, no layout shift, full prefers-reduced-motion support.
+   ========================================================================== */
+
+/* ============================================================================
+   KEYFRAMES
+   ========================================================================== */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }   /* track is duplicated x2 in markup */
+}
+
+@keyframes ping {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes pulse-mark {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(0.88); opacity: 0.6; }
+}
+
+@keyframes loader-slide {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(360%); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@keyframes float-y-sm {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes scroll-indicator {
+  0%   { transform: translateY(0); opacity: 0; }
+  35%  { opacity: 1; }
+  70%  { transform: translateY(14px); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes drift {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(2%, 3%) rotate(2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes cta-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%      { opacity: 0.85; transform: scale(1.05); }
+}
+
+/* Entrance keyframes used by .reveal variants */
+@keyframes fade-up   { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: none; } }
+@keyframes fade-in   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-left { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: none; } }
+@keyframes fade-right{ from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: none; } }
+@keyframes fade-scale{ from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
+
+/* ============================================================================
+   SCROLL REVEAL  —  JS (animations.js / IntersectionObserver) adds .is-visible.
+   IMPORTANT: if JS is disabled, the .no-js fallback (see bottom) shows content.
+   ========================================================================== */
+.reveal,
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.reveal-up    { transform: translateY(36px); }
+.reveal-left  { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+.reveal-scale { transform: scale(0.92); }
+
+.reveal.is-visible,
+.reveal-up.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible,
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--speed-slow) var(--ease),
+              transform var(--speed-slow) var(--ease);
+}
+
+/* Staggered children — set --i on each child (or JS sets it) */
+.stagger-group.is-visible > * {
+  animation: fade-up var(--speed-slow) var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+/* ============================================================================
+   TEXT & IMAGE REVEAL (clip-path masked reveal)
+   ========================================================================== */
+.text-reveal { display: inline-block; overflow: hidden; }
+.text-reveal > * {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform var(--speed-slow) var(--ease);
+}
+.text-reveal.is-visible > * { transform: none; }
+
+.image-reveal {
+  position: relative;
+  overflow: hidden;
+}
+.image-reveal img {
+  transform: scale(1.12);
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.9s var(--ease), transform 1.1s var(--ease);
+}
+.image-reveal.is-visible img {
+  transform: scale(1);
+  clip-path: inset(0 0 0 0);
+}
+
+/* ============================================================================
+   HOVER MICRO-INTERACTIONS  (reusable)
+   ========================================================================== */
+.hover-lift { transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease); }
+.hover-lift:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+
+.hover-outline { transition: border-color var(--speed) var(--ease); }
+.hover-outline:hover { border-color: var(--color-primary); }
+
+/* Animated underline link */
+.link-underline {
+  position: relative;
+  color: var(--color-text);
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 1.5px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--speed) var(--ease);
+}
+.link-underline:hover { color: var(--color-primary); }
+.link-underline:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Image zoom on hover (apply to a wrapper with overflow hidden) */
+.zoom-media { overflow: hidden; }
+.zoom-media img { transition: transform var(--speed-slow) var(--ease); }
+.zoom-media:hover img { transform: scale(1.06); }
+
+/* Gentle continuous float (decorative elements only) */
+.is-floating { animation: float-y 5s var(--ease-in-out) infinite; }
+.is-floating-sm { animation: float-y-sm 4s var(--ease-in-out) infinite; }
+
+/* ============================================================================
+   REDUCED MOTION  —  neutralize all decorative motion, keep content visible
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale,
+  .text-reveal > *, .stagger-group > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .image-reveal img { clip-path: none !important; transform: none !important; }
+  .marquee__track,
+  .is-floating, .is-floating-sm,
+  .customizer-toggle .icon,
+  .badge--status .status-dot::after,
+  .preloader__mark,
+  .preloader__bar::after { animation: none !important; }
+}
+
+/* ============================================================================
+   NO-ANIM MODE  —  customizer "Scroll animations: off" adds .no-anim to <html>.
+   Mirrors reduced-motion: content stays visible, decorative motion stops.
+   ========================================================================== */
+.no-anim .reveal, .no-anim .reveal-up, .no-anim .reveal-left,
+.no-anim .reveal-right, .no-anim .reveal-scale,
+.no-anim .text-reveal > *, .no-anim .stagger-group > * {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+.no-anim .image-reveal img { clip-path: none !important; transform: none !important; }
+.no-anim .marquee__track,
+.no-anim .is-floating,
+.no-anim .is-floating-sm,
+.no-anim .final-cta__glow,
+.no-anim .scroll-indicator__mouse::after { animation: none !important; }
+
+/* ============================================================================
+   NO-JS FALLBACK  —  ensure reveal content is never permanently hidden.
+   The <html> has class "no-js"; navigation.js removes it on load.
+   ========================================================================== */
+.no-js .reveal,
+.no-js .reveal-up,
+.no-js .reveal-left,
+.no-js .reveal-right,
+.no-js .reveal-scale {
+  opacity: 1;
+  transform: none;
+}
+.no-js .text-reveal > * { transform: none; }
+.no-js .image-reveal img { clip-path: none; transform: none; }

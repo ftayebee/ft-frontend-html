@@ -1,0 +1,139 @@
+/* ============================================================================
+   LAYOUT.CSS  —  Containers, grids, section wrappers, split layouts
+   These utilities replace the Bootstrap grid the old template depended on.
+   ========================================================================== */
+
+/* ---- CONTAINER ------------------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.container--wide { max-width: var(--container-wide); }
+.container--narrow { max-width: var(--container-narrow); }
+.container--fluid { max-width: none; }
+
+/* ---- SECTION WRAPPER ------------------------------------------------------ */
+.section {
+  position: relative;
+  padding-block: var(--section-gap);
+}
+.section--sm { padding-block: var(--section-gap-sm); }
+.section--flush-top { padding-top: 0; }
+.section--flush-bottom { padding-bottom: 0; }
+
+/* Alternating background tone for visual rhythm */
+.section--soft { background: var(--color-bg-soft); }
+
+/* Top hairline divider */
+.section--divider { border-top: 1px solid var(--color-border); }
+
+/* ---- SECTION HEADING BLOCK ------------------------------------------------ */
+.section-head {
+  max-width: 640px;
+  margin-bottom: clamp(2.5rem, 1.8rem + 2vw, 4rem);
+}
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+.section-head__title {
+  font-size: var(--fs-h2);
+  margin-top: 0.9rem;
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+.section-head__text {
+  font-size: var(--fs-lead);
+  color: var(--color-text-muted);
+}
+
+/* Heading + side text layout (used on pricing / services) */
+.section-head--split {
+  max-width: none;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.5rem, 1rem + 3vw, 4rem);
+  align-items: end;
+}
+
+/* ---- GRID UTILITIES ------------------------------------------------------- */
+.grid { display: grid; gap: var(--grid-gap, 1.75rem); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Auto-fit responsive grid (cards) */
+.grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-col, 280px), 1fr));
+}
+
+/* ---- FLEX UTILITIES ------------------------------------------------------- */
+.flex { display: flex; }
+.flex--between { display: flex; justify-content: space-between; align-items: center; }
+.flex--center { display: flex; justify-content: center; align-items: center; }
+.flex--wrap { flex-wrap: wrap; }
+.flex--col { flex-direction: column; }
+.gap-sm { gap: 0.5rem; }
+.gap { gap: 1rem; }
+.gap-lg { gap: 1.75rem; }
+
+/* ---- SPLIT LAYOUT (editorial two-column) --------------------------------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 1rem + 5vw, 5.5rem);
+  align-items: center;
+}
+.split--media-left { grid-template-columns: 0.9fr 1.1fr; }
+.split--media-right { grid-template-columns: 1.1fr 0.9fr; }
+/* Reverse visual order while keeping logical DOM order */
+.split--reverse > :first-child { order: 2; }
+
+/* ---- SPACING UTILITIES (margin helpers used in markup) -------------------- */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+.mb-1 { margin-top: 0; margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.grid--gap-lg { --grid-gap: clamp(2rem, 1rem + 3vw, 4rem); }
+
+/* ---- STACK (vertical spacing helper) -------------------------------------- */
+.stack > * + * { margin-top: var(--stack-gap, 1.25rem); }
+.stack-sm > * + * { margin-top: 0.65rem; }
+.stack-lg > * + * { margin-top: 2rem; }
+
+/* ---- DECORATIVE BACKDROP LAYER ------------------------------------------- */
+.section__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--gradient-glow);
+  opacity: 0.6;
+  z-index: 0;
+}
+.section > .container { position: relative; z-index: 1; }
+
+/* ----------------------------------------------------------------------------
+   RESPONSIVE COLLAPSE — full responsive overrides live in responsive.css;
+   these are the structural fallbacks so layout never breaks mid-build.
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .section-head--split { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+@media (max-width: 768px) {
+  .split,
+  .split--media-left,
+  .split--media-right { grid-template-columns: 1fr; }
+  .split--reverse > :first-child { order: 0; }
+  .grid--2,
+  .grid--3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .grid--4 { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,245 @@
+/* ============================================================================
+   VARIABLES.CSS  —  Global Design Tokens
+   ----------------------------------------------------------------------------
+   Rowan Vale · Creative Developer Portfolio Template
+   ----------------------------------------------------------------------------
+   This is the ONLY file most buyers need to edit to re-skin the template.
+   Every color, font, radius, shadow and spacing value flows from here.
+
+   HOW TO CHANGE THE PRIMARY ACCENT COLOR:
+     1. Find  --color-primary  and  --color-primary-strong  below.
+     2. Replace the hex values with your brand color.
+     3. Save. The whole site updates automatically.
+
+   HOW TO SWAP THE WHOLE PALETTE:
+     Scroll to "ALTERNATE PALETTES" near the bottom of this file, copy one of
+     the commented blocks, and paste its variables inside the :root rule
+     (or inside a [data-accent="..."] block — see theme-switcher.js).
+   ========================================================================== */
+
+:root {
+  /* ---- BRAND ACCENTS -------------------------------------------------------
+     One configurable primary + one subtle secondary. Used sparingly so the
+     design never becomes neon or monochromatic-green. */
+  --color-primary: #9ee86f;          /* main accent (lime)            */
+  --color-primary-strong: #73cf45;   /* darker accent for gradients   */
+  --color-primary-soft: rgba(158, 232, 111, 0.12); /* tints / glows    */
+  --color-secondary: #7b8cff;        /* subtle secondary (periwinkle) */
+  --color-secondary-soft: rgba(123, 140, 255, 0.12);
+
+  /* ---- SURFACES & BACKGROUND ---------------------------------------------- */
+  --color-bg: #090b0d;               /* page base, near-black         */
+  --color-bg-soft: #101317;          /* alternating section base      */
+  --color-surface: #15191e;          /* cards                         */
+  --color-surface-strong: #1b2026;   /* raised cards / inputs         */
+  --color-surface-hover: #20262e;    /* hover state for surfaces      */
+
+  /* ---- TEXT ---------------------------------------------------------------- */
+  --color-text: #f5f4ef;             /* warm off-white                */
+  --color-text-muted: #a4a9b0;       /* secondary copy                */
+  --color-text-faint: #6c727b;       /* labels, meta                  */
+  --color-text-on-accent: #08120a;   /* text placed on accent fills   */
+
+  /* ---- BORDERS ------------------------------------------------------------- */
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+
+  /* ---- FEEDBACK ------------------------------------------------------------ */
+  --color-success: #5cd6a0;
+  --color-warning: #f0c674;
+  --color-error: #ff6b6b;
+  --color-info: var(--color-secondary);
+
+  /* ---- GRADIENTS (carefully controlled, not overused) --------------------- */
+  --gradient-accent: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-strong) 100%);
+  --gradient-surface: linear-gradient(160deg, var(--color-surface-strong) 0%, var(--color-surface) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 0%, var(--color-primary-soft) 0%, transparent 70%);
+
+  /* ---- SHADOWS ------------------------------------------------------------- */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow-accent: 0 16px 48px -12px rgba(158, 232, 111, 0.35);
+
+  /* ---- TYPOGRAPHY ----------------------------------------------------------
+     Two families only. Display = Space Grotesk, Body = Inter.
+     To change fonts: update the <link> in each page <head> AND these vars. */
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Space Grotesk", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Fluid type scale — clamp(min, preferred, max). Resizes smoothly. */
+  --fs-display: clamp(2.75rem, 1.6rem + 5.4vw, 5.5rem);   /* hero h1   */
+  --fs-h1: clamp(2.25rem, 1.5rem + 3.4vw, 3.75rem);
+  --fs-h2: clamp(1.85rem, 1.3rem + 2.3vw, 2.85rem);
+  --fs-h3: clamp(1.4rem, 1.15rem + 1.1vw, 1.9rem);
+  --fs-h4: clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);
+  --fs-lead: clamp(1.075rem, 1rem + 0.35vw, 1.25rem);     /* intro copy */
+  --fs-body: 1rem;                                        /* 16px base  */
+  --fs-sm: 0.9rem;
+  --fs-xs: 0.8rem;
+  --fs-label: 0.75rem;                                    /* eyebrows   */
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.25;
+  --lh-base: 1.7;
+  --lh-relaxed: 1.8;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;   /* eyebrow labels */
+
+  /* ---- LAYOUT -------------------------------------------------------------- */
+  --container-max: 1240px;       /* default content width            */
+  --container-wide: 1440px;      /* wide/full-bleed sections          */
+  --container-narrow: 760px;     /* prose / reading width             */
+  --gutter: clamp(1.25rem, 0.8rem + 2vw, 2.5rem); /* side padding      */
+
+  /* Vertical section rhythm */
+  --section-gap: clamp(4rem, 2.5rem + 6vw, 8rem);
+  --section-gap-sm: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
+
+  /* ---- RADIUS -------------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  /* Global radius scale. Set to 0 (via [data-radius="sharp"]) for sharp UI. */
+  --radius-scale: 1;
+
+  /* ---- HEADER -------------------------------------------------------------- */
+  --header-height: 80px;
+  --header-height-compact: 64px;
+
+  /* ---- MOTION -------------------------------------------------------------- */
+  --speed-fast: 0.2s;
+  --speed: 0.35s;
+  --speed-slow: 0.6s;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);      /* gentle ease-out      */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Z-INDEX SCALE ------------------------------------------------------- */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-header: 200;
+  --z-drawer: 300;
+  --z-panel: 400;
+  --z-cursor: 9999;
+  --z-loader: 10000;
+}
+
+/* ----------------------------------------------------------------------------
+   RADIUS MODE  —  toggled by the customizer (data-radius on <html>)
+   -------------------------------------------------------------------------- */
+[data-radius="sharp"] {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  /* pills stay pills for buttons; only card corners go sharp */
+}
+
+/* ----------------------------------------------------------------------------
+   TEXT-SIZE MODE  —  customizer accessibility option
+   -------------------------------------------------------------------------- */
+[data-font-scale="large"] {
+  --fs-body: 1.075rem;
+  --fs-lead: clamp(1.15rem, 1.05rem + 0.4vw, 1.35rem);
+}
+
+/* ============================================================================
+   ACCENT THEMES  —  applied via [data-accent="..."] on <html>.
+   The customizer panel switches these. They ONLY override accent variables,
+   never duplicate the whole stylesheet.
+   ========================================================================== */
+
+/* 1 · Electric Lime (default — also defined in :root above) */
+[data-accent="lime"] {
+  --color-primary: #9ee86f;
+  --color-primary-strong: #73cf45;
+  --color-primary-soft: rgba(158, 232, 111, 0.12);
+  --color-text-on-accent: #08120a;
+  --shadow-accent: 0 16px 48px -12px rgba(158, 232, 111, 0.35);
+}
+
+/* 2 · Creative Purple */
+[data-accent="purple"] {
+  --color-primary: #a78bfa;
+  --color-primary-strong: #7c5cff;
+  --color-primary-soft: rgba(167, 139, 250, 0.14);
+  --color-secondary: #5cd6c4;
+  --color-text-on-accent: #0e0820;
+  --shadow-accent: 0 16px 48px -12px rgba(124, 92, 255, 0.4);
+}
+
+/* 3 · Modern Cyan */
+[data-accent="cyan"] {
+  --color-primary: #4fd1e3;
+  --color-primary-strong: #20b3c9;
+  --color-primary-soft: rgba(79, 209, 227, 0.14);
+  --color-secondary: #f0c674;
+  --color-text-on-accent: #03171b;
+  --shadow-accent: 0 16px 48px -12px rgba(79, 209, 227, 0.38);
+}
+
+/* 4 · Warm Orange */
+[data-accent="orange"] {
+  --color-primary: #ff8a4c;
+  --color-primary-strong: #f26b2e;
+  --color-primary-soft: rgba(255, 138, 76, 0.14);
+  --color-secondary: #7b8cff;
+  --color-text-on-accent: #1f0d04;
+  --shadow-accent: 0 16px 48px -12px rgba(242, 107, 46, 0.4);
+}
+
+/* ============================================================================
+   LIGHT MODE  —  applied via [data-theme="light"] on <html> (theme switcher).
+   Dark remains the primary presentation; light is an accessible alternative.
+   ========================================================================== */
+[data-theme="light"] {
+  --color-bg: #f6f6f1;
+  --color-bg-soft: #eeeee7;
+  --color-surface: #ffffff;
+  --color-surface-strong: #ffffff;
+  --color-surface-hover: #f1f1ea;
+
+  --color-text: #14171b;
+  --color-text-muted: #4d545d;
+  --color-text-faint: #7b828b;
+  --color-text-on-accent: #08120a;
+
+  --color-border: rgba(10, 14, 20, 0.10);
+  --color-border-strong: rgba(10, 14, 20, 0.18);
+
+  --shadow-xs: 0 1px 2px rgba(10, 20, 30, 0.06);
+  --shadow-sm: 0 4px 12px rgba(10, 20, 30, 0.08);
+  --shadow-md: 0 12px 32px rgba(10, 20, 30, 0.10);
+  --shadow-lg: 0 24px 60px rgba(10, 20, 30, 0.12);
+
+  --gradient-surface: linear-gradient(160deg, #ffffff 0%, #f4f4ee 100%);
+}
+
+/* ============================================================================
+   ALTERNATE PALETTE EXAMPLES  (copy into :root to use as the new DEFAULT)
+   ----------------------------------------------------------------------------
+   5 · Minimal Monochrome — drop the accent entirely for an editorial look:
+
+   :root {
+     --color-primary: #e7e7e2;
+     --color-primary-strong: #c4c4bd;
+     --color-primary-soft: rgba(231, 231, 226, 0.10);
+     --color-secondary: #9aa0a8;
+     --color-text-on-accent: #0c0d0e;
+   }
+
+   (Palettes 1–4 above can also be promoted to default the same way —
+    just paste their variables straight into :root.)
+   ========================================================================== */
